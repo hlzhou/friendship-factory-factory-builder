@@ -18,4 +18,12 @@
         </activity>
     </application>
 
+    <receiver android:name="AppWidgetProvider" >
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent-filter>
+        <meta-data android:name="android.appwidget.provider"
+            android:resource="@xml/moments_appwidget_info" />
+    </receiver>
+
 </manifest>
