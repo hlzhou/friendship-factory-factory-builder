@@ -1,1 +1,1 @@
-factories, frienship & friendship factories.
+factories, friendship & friendship factories.
