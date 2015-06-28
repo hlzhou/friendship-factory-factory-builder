@@ -19,14 +19,14 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
     
-	public static void showPrompt(final MomentPromptActivity activity, Type type) {
+	public void showPrompt(Type type) {
 		switch(type){
 		case TEXT:
 			TextInputDialog tDialog = new TextInputDialog();
-	    	tDialog.show(activity.getFragmentManager(), "textInput");
+	    	tDialog.show(getFragmentManager(), "textInput");
 	    	break;
 		case IMAGE:
-			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 	    	builder.setTitle(R.string.image_source_prompt)
 	    	.setItems(R.array.image_sources, new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int which) {
@@ -35,11 +35,11 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	            switch(which){
 	            case 0:
 	            	Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	            	activity.startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
+	            	startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
 	            	break;
 	            case 1:
 	            	Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-	                activity.startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
+	                startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
 	            	break;
 	            }
 	        }
@@ -48,7 +48,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	    	break;
 		case LINK:
 			LinkInputDialog lDialog = new LinkInputDialog();
-	    	lDialog.show(activity.getFragmentManager(), "linkInput");
+	    	lDialog.show(getFragmentManager(), "linkInput");
 	    	break;
 		}
 	}
@@ -97,5 +97,4 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         String dataName = "Note " + mDataNumber++;
         mDbHelper.createNote(Type.TEXT, "test");
     }
-	
 }
