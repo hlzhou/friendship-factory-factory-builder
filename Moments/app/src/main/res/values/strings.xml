@@ -4,5 +4,9 @@
     <string name="app_name">Moments</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="what_makes_happy">What makes you happy? :)</string>
+    <string name="submit">Into the Jar!</string>
+    <string name="cancel">Nevermind.</string>
+    <string name="prompt_link">Give me a great link!</string>
 
 </resources>
