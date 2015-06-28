@@ -1,4 +1,6 @@
-# Friendship Factory Factory Builder
+Friendship Factory Factory Builder presents 
+
+# Moments - the .jar for memories. 
 ### Greylock Hackathon *6/27/2015*
 
 factories, friendship & friendship factories.
