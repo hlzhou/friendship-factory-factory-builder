@@ -4,5 +4,6 @@
     <string name="app_name">Moments</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="what_makes_happy">What makes you happy? :)</string>
 
 </resources>
