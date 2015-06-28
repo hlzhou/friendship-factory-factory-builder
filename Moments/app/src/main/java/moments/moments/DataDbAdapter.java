@@ -74,7 +74,7 @@ public class DataDbAdapter {
      *
      * @param ctx the Context within which to work
      */
-    public NotesDbAdapter(Context ctx) {
+    public DataDbAdapter(Context ctx) {
         this.mCtx = ctx;
     }
 

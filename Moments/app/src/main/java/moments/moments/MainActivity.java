@@ -8,10 +8,15 @@ import android.view.MenuItem;
 
 public class MainActivity extends ActionBarActivity {
 
+    private int mDataNumber = 1;
+    private DataDbAdapter mDbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mDbHelper = new DataDbAdapter(this);
+        mDbHelper.open();
     }
 
 
@@ -35,5 +40,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createNote(Type type, String text) {
+        String dataName = "Note " + mDataNumber++;
+        mDbHelper.createNote(Type.TEXT, "test");
+        //mDbHelper.createNote(type, text);
     }
 }
