@@ -10,6 +10,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("keystore.jks")
+            storePassword "factoryfactory1235"
+            keyAlias "happy"
+            keyPassword "factory"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
