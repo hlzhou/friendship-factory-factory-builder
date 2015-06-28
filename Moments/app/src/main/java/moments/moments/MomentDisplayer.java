@@ -3,9 +3,20 @@ package moments.moments;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
+import android.view.Display;
+import android.view.LayoutInflater;
+import android.view.Window;
+import android.widget.ImageView;
+
+import java.io.IOException;
 
 
 public class MomentDisplayer {
@@ -40,7 +51,7 @@ public class MomentDisplayer {
 	
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	private static boolean showImageMoment(Activity activity, String img) {
-	    /*// Get the layout inflater
+	    // Get the layout inflater
 	    LayoutInflater inflater = activity.getLayoutInflater();
 	    
 	    Uri imageUri = Uri.parse(img);
@@ -87,14 +98,6 @@ public class MomentDisplayer {
 
 	    // Show the dialog
 	    dialog.show();
-	    return true; */
-        String text = "hi";
-        if (!text.startsWith("https://") && !text.startsWith("http://")){
-            text = "http://" + text;
-        }
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(text));
-        activity.startActivity(i);
-        return true;
+	    return true;
 	}
 }
