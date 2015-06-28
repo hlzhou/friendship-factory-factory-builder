@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <service android:name="com.parse.PushService" />
         <receiver android:name="com.parse.ParseBroadcastReceiver">
             <intent-filter>
@@ -49,6 +50,20 @@
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
                 <category android:name="moments.moments" />
             </intent-filter>
+=======
+        <activity android:name="AppWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".MomentsAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/moments_appwidget_info" />
+>>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
         </receiver>
     </application>
 
