@@ -1,3 +1,24 @@
+package moments.moments;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.view.Display;
+import android.view.LayoutInflater;
+import android.view.Window;
+import android.widget.ImageView;
+
+import java.io.IOException;
+
+import moments.moments.Data;
+import moments.moments.R;
+
 public class MomentDisplayer {
 	public static boolean showMoment(Activity activity, Data data) {
 		switch(data.getType()) {
@@ -29,7 +50,7 @@ public class MomentDisplayer {
 	}
 	
 	private static boolean showImageMoment(Activity activity, String img) {
-	    // Get the layout inflater
+	    /*// Get the layout inflater
 	    LayoutInflater inflater = activity.getLayoutInflater();
 	    
 	    Uri imageUri = Uri.parse(img);
@@ -58,10 +79,10 @@ public class MomentDisplayer {
 	 		bitmapHeight = bitmapHeight / 2;
 	 		bitmapWidth = bitmapWidth / 2;
 	 	}
-	 	
+
 	 	// Create resized bitmap image
 	 	BitmapDrawable resizedBitmap = new BitmapDrawable(activity.getResources(), Bitmap.createScaledBitmap(bitmap, bitmapWidth, bitmapHeight, false));
-	    
+
 	 	// Create dialog
 	    Dialog dialog = new Dialog(activity);
 	    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -75,6 +96,14 @@ public class MomentDisplayer {
 
 	    // Show the dialog
 	    dialog.show();
-	    return true;
+	    return true; */
+        String text = "hi";
+        if (!text.startsWith("https://") && !text.startsWith("http://")){
+            text = "http://" + text;
+        }
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(text));
+        activity.startActivity(i);
+        return true;
 	}
 }

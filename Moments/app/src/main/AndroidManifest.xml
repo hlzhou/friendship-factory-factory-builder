@@ -23,14 +23,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".WTextAddActivity"
-            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="TakeWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".WImageAddActivity"
-            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name=".WTextAddActivity"></activity>
 
-        <activity android:name=".WLinkAddActivity"
-            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name=".WImageAddActivity"></activity>
+
+        <activity android:name=".WLinkAddActivity"></activity>
+
+        <activity android:name=".WTakeActivity"></activity>
 
         <receiver android:name=".MomentsAppWidgetProvider" >
             <intent-filter>

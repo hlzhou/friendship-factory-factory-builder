@@ -28,19 +28,21 @@ public class MainActivity extends MomentPromptActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Parse.initialize(this, "eJQBzNcoqThWmykrIskhwcVgvuZyVFBqztpeecst",
+                "KTM5cp0yA3Tdc6q0lHvNhq7kdqX74Kim2FdRjAOF");
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
     
     public void addText(View view) {
-    	showPrompt(Type.TEXT);
+    	showPrompt(Type.TEXT, false);
     }
 
     public void addImage(View view) {
-    	showPrompt(Type.IMAGE);    	
+    	showPrompt(Type.IMAGE, false);
     }
     
     public void addLink(View view) {
-    	showPrompt(Type.LINK);
+    	showPrompt(Type.LINK, false);
     }
     
     public void openJar(View view) {

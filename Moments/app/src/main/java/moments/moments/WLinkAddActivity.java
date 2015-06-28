@@ -16,6 +16,6 @@ public class WLinkAddActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_LINK_ADD");
-        super.showPrompt(Type.LINK);
+        super.showPrompt(Type.LINK, true);
     }
 }

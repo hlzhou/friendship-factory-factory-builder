@@ -9,9 +9,9 @@
     android:minResizeHeight="30dp"
     android:minResizeWidth="30dp"
     android:updatePeriodMillis="2000"
-    android:previewImage="@drawable/smiley_icon"
-    android:initialLayout="@layout/appwidget"
-    android:configure="moments.moments.AppWidgetConfigureActivity"
+    android:previewImage="@drawable/jar"
+    android:initialLayout="@layout/appwidget_jar"
+    android:configure="moments.moments.TakeWidgetConfigureActivity"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
 

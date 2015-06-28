@@ -17,6 +17,6 @@ public class WImageAddActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_IMAGE_ADD");
-        super.showPrompt(Type.IMAGE);
+        super.showPrompt(Type.IMAGE, true);
     }
 }

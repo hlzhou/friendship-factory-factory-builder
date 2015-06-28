@@ -21,9 +21,11 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
+    private boolean is_widget = false;
     
-	public void showPrompt(Type type) {
-		switch(type){
+	public void showPrompt(Type type, boolean widget) {
+		is_widget = widget;
+        switch(type){
 		case TEXT:
 			TextInputDialog tDialog = new TextInputDialog();
 	    	tDialog.show(getFragmentManager(), "textInput");
@@ -50,12 +52,18 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     public void submitText(String text) {
     	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     	createNote(Type.TEXT, text);
+        if (is_widget){
+            System.exit(0);
+        }
     }
     
     @Override
 	public void submitLink(String text) {
 		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     	createNote(Type.LINK, text);
+        if (is_widget){
+            System.exit(0);
+        }
 	}
     
     @Override
@@ -70,6 +78,9 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
                 boolean result = MomentDisplayer.showMoment(this, new Data(Type.IMAGE, selectedImage.toString()));
         	}
         	break;
+        }
+        if (is_widget){
+            System.exit(0);
         }
     }
     

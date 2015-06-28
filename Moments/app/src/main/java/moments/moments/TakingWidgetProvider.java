@@ -28,7 +28,7 @@ public class TakingWidgetProvider extends AppWidgetProvider {
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget_jar); //TODO: the layout might be something else
-            views.setOnClickPendingIntent(R.id.jar, pendingTakeIntent);
+            views.setOnClickPendingIntent(R.id.take_jar, pendingTakeIntent);
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);

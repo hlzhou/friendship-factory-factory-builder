@@ -17,6 +17,6 @@ public class WTextAddActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_TEXT_ADD");
-        super.showPrompt(Type.TEXT);
+        super.showPrompt(Type.TEXT, true);
     }
 }

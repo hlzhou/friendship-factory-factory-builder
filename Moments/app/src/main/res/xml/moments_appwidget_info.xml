@@ -4,10 +4,10 @@
 </PreferenceScreen> -->
 
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="40dp"
-    android:minHeight="40dp"
+    android:minWidth="120dp"
+    android:minHeight="50dp"
     android:minResizeHeight="30dp"
-    android:minResizeWidth="30dp"
+    android:minResizeWidth="80dp"
     android:updatePeriodMillis="2000"
     android:previewImage="@drawable/smiley_icon"
     android:initialLayout="@layout/appwidget"

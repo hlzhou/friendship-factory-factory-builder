@@ -1,0 +1,740 @@
+diff --git a/Moments/.idea/compiler.xml b/Moments/.idea/compiler.xml
+index 8acb7a2..96cc43e 100644
+--- a/Moments/.idea/compiler.xml
++++ b/Moments/.idea/compiler.xml
+@@ -1,7 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <option name="DEFAULT_COMPILER" value="Javac" />
+     <resourceExtensions />
+     <wildcardResourcePatterns>
+       <entry name="!?*.java" />
+@@ -20,5 +19,4 @@
+       </profile>
+     </annotationProcessing>
+   </component>
+-</project>
+-
++</project>
+\ No newline at end of file
+diff --git a/Moments/.idea/encodings.xml b/Moments/.idea/encodings.xml
+deleted file mode 100644
+index e206d70..0000000
+--- a/Moments/.idea/encodings.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+-</project>
+-
+diff --git a/Moments/.idea/gradle.xml b/Moments/.idea/gradle.xml
+index fe865d3..df527ea 100644
+--- a/Moments/.idea/gradle.xml
++++ b/Moments/.idea/gradle.xml
+@@ -3,9 +3,8 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+-        <option name="distributionType" value="LOCAL" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+-        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.2.1" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+@@ -15,5 +14,4 @@
+       </GradleProjectSettings>
+     </option>
+   </component>
+-</project>
+-
++</project>
+\ No newline at end of file
+diff --git a/Moments/.idea/misc.xml b/Moments/.idea/misc.xml
+index 49b2fd5..4493fef 100644
+--- a/Moments/.idea/misc.xml
++++ b/Moments/.idea/misc.xml
+@@ -1,8 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="EntryPointsManager">
+-    <entry_points version="2.0" />
+-  </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+     <OptionsSetting value="true" id="Add" />
+     <OptionsSetting value="true" id="Remove" />
+@@ -13,11 +10,10 @@
+     <ConfirmationsSetting value="0" id="Add" />
+     <ConfirmationsSetting value="0" id="Remove" />
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="Android API 21 Platform" project-jdk-type="Android SDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+     <option name="id" value="Android" />
+   </component>
+-</project>
+-
++</project>
+\ No newline at end of file
+diff --git a/Moments/.idea/modules.xml b/Moments/.idea/modules.xml
+index 53547c6..5606602 100644
+--- a/Moments/.idea/modules.xml
++++ b/Moments/.idea/modules.xml
+@@ -3,8 +3,6 @@
+   <component name="ProjectModuleManager">
+     <modules>
+       <module fileurl="file://$PROJECT_DIR$/Moments.iml" filepath="$PROJECT_DIR$/Moments.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+     </modules>
+   </component>
+-</project>
+-
++</project>
+\ No newline at end of file
+diff --git a/Moments/.idea/scopes/scope_settings.xml b/Moments/.idea/scopes/scope_settings.xml
+deleted file mode 100644
+index 922003b..0000000
+--- a/Moments/.idea/scopes/scope_settings.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<component name="DependencyValidationManager">
+-  <state>
+-    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+-  </state>
+-</component>
+\ No newline at end of file
+diff --git a/Moments/.idea/vcs.xml b/Moments/.idea/vcs.xml
+index def6a6a..6c0b863 100644
+--- a/Moments/.idea/vcs.xml
++++ b/Moments/.idea/vcs.xml
+@@ -1,7 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="" />
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+   </component>
+-</project>
+-
++</project>
+\ No newline at end of file
+diff --git a/Moments/Moments.iml b/Moments/Moments.iml
+index 2a02201..7eda266 100644
+--- a/Moments/Moments.iml
++++ b/Moments/Moments.iml
+@@ -1,13 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
++<module external.linked.project.id="Moments" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+   <component name="FacetManager">
+     <facet type="java-gradle" name="Java-Gradle">
+       <configuration>
+         <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/build" />
++        <option name="BUILDABLE" value="false" />
+       </configuration>
+     </facet>
+   </component>
+-  <component name="NewModuleRootManager" inherit-compiler-output="false">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <output url="file://$MODULE_DIR$/build/classes/main" />
+     <output-test url="file://$MODULE_DIR$/build/classes/test" />
+     <exclude-output />
+@@ -17,5 +18,4 @@
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+-</module>
+-
++</module>
+\ No newline at end of file
+diff --git a/Moments/app/app.iml b/Moments/app/app.iml
+index c6c55c4..431faf8 100644
+--- a/Moments/app/app.iml
++++ b/Moments/app/app.iml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" type="JAVA_MODULE" version="4">
++<module external.linked.project.id=":app" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="Moments" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+   <component name="FacetManager">
+     <facet type="android-gradle" name="Android-Gradle">
+       <configuration>
+@@ -9,10 +9,12 @@
+     <facet type="android" name="Android">
+       <configuration>
+         <option name="SELECTED_BUILD_VARIANT" value="debug" />
++        <option name="SELECTED_TEST_ARTIFACT" value="_android_test_" />
+         <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+         <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+-        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleDebugTest" />
+         <option name="SOURCE_GEN_TASK_NAME" value="generateDebugSources" />
++        <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleDebugTest" />
++        <option name="COMPILE_JAVA_TEST_TASK_NAME" value="compileDebugTestSources" />
+         <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateDebugTestSources" />
+         <option name="ALLOW_USER_CONFIGURATION" value="false" />
+         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+@@ -24,6 +26,7 @@
+   </component>
+   <component name="NewModuleRootManager" inherit-compiler-output="false">
+     <output url="file://$MODULE_DIR$/build/intermediates/classes/debug" />
++    <output-test url="file://$MODULE_DIR$/build/intermediates/classes/test/debug" />
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/debug" isTestSource="false" generated="true" />
+@@ -86,6 +89,6 @@
+     <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
+     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
+     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
++    <orderEntry type="library" exported="" name="bolts-android-1.2.0" level="project" />
+   </component>
+-</module>
+-
++</module>
+\ No newline at end of file
+diff --git a/Moments/app/build.gradle b/Moments/app/build.gradle
+index 043fbb4..9ade626 100644
+--- a/Moments/app/build.gradle
++++ b/Moments/app/build.gradle
+@@ -23,4 +23,9 @@ android {
+ dependencies {
+     compile fileTree(dir: 'libs', include: ['*.jar'])
+     compile 'com.android.support:appcompat-v7:21.0.3'
++}
++dependencies {
++    compile 'com.parse.bolts:bolts-android:1.+'
++    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
++=======
+ }
+\ No newline at end of file
+diff --git a/Moments/app/src/main/AndroidManifest.xml b/Moments/app/src/main/AndroidManifest.xml
+index e3f098f..ed1a2c4 100644
+--- a/Moments/app/src/main/AndroidManifest.xml
++++ b/Moments/app/src/main/AndroidManifest.xml
+@@ -1,6 +1,16 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="moments.moments" >
++    <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
++    <uses-permission android:name="android.permission.WAKE_LOCK" />
++    <uses-permission android:name="android.permission.VIBRATE" />
++    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
++    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
++    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
++    <permission android:protectionLevel="signature"
++        android:name="moments.moments.permission.C2D_MESSAGE" />
++    <uses-permission android:name="moments.moments.permission.C2D_MESSAGE" />
+ 
+     <application
+         android:allowBackup="true"
+@@ -17,6 +27,30 @@
+             </intent-filter>
+         </activity>
+ 
++<<<<<<< HEAD
++        <service android:name="com.parse.PushService" />
++        <receiver android:name="com.parse.ParseBroadcastReceiver">
++            <intent-filter>
++                <action android:name="android.intent.action.BOOT_COMPLETED" />
++                <action android:name="android.intent.action.USER_PRESENT" />
++            </intent-filter>
++        </receiver>
++        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
++            android:exported="false">
++            <intent-filter>
++                <action android:name="com.parse.push.intent.RECEIVE" />
++                <action android:name="com.parse.push.intent.DELETE" />
++                <action android:name="com.parse.push.intent.OPEN" />
++            </intent-filter>
++        </receiver>
++        <receiver android:name="com.parse.GcmBroadcastReceiver"
++            android:permission="com.google.android.c2dm.permission.SEND">
++            <intent-filter>
++                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
++                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
++                <category android:name="moments.moments" />
++            </intent-filter>
++=======
+         <activity android:name="AppWidgetConfigureActivity">
+             <intent-filter>
+                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+@@ -38,6 +72,7 @@
+             </intent-filter>
+             <meta-data android:name="android.appwidget.provider"
+                 android:resource="@xml/moments_appwidget_info" />
++>>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
+         </receiver>
+ 
+         <receiver android:name=".TakingWidgetProvider" >
+diff --git a/Moments/app/src/main/java/fffb/moments/app/MainActivity.java b/Moments/app/src/main/java/fffb/moments/app/MainActivity.java
+deleted file mode 100644
+index 56ddb23..0000000
+--- a/Moments/app/src/main/java/fffb/moments/app/MainActivity.java
++++ /dev/null
+@@ -1,40 +0,0 @@
+-package fffb.moments.app;
+-
+-import android.support.v7.app.ActionBarActivity;
+-import android.os.Bundle;
+-import android.view.Menu;
+-import android.view.MenuItem;
+-
+-import moments.moments.R;
+-
+-
+-public class MainActivity extends ActionBarActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_main);
+-    }
+-
+-
+-    @Override
+-    public boolean onCreateOptionsMenu(Menu menu) {
+-        
+-        // Inflate the menu; this adds items to the action bar if it is present.
+-        getMenuInflater().inflate(R.menu.menu_main, menu);
+-        return true;
+-    }
+-
+-    @Override
+-    public boolean onOptionsItemSelected(MenuItem item) {
+-        // Handle action bar item clicks here. The action bar will
+-        // automatically handle clicks on the Home/Up button, so long
+-        // as you specify a parent activity in AndroidManifest.xml.
+-        int id = item.getItemId();
+-        if (id == R.id.action_settings) {
+-            return true;
+-        }
+-        return super.onOptionsItemSelected(item);
+-    }
+-
+-}
+diff --git a/Moments/app/src/main/java/moments/moments/DataDbAdapter.java b/Moments/app/src/main/java/moments/moments/DataDbAdapter.java
+index 7747930..b90a883 100644
+--- a/Moments/app/src/main/java/moments/moments/DataDbAdapter.java
++++ b/Moments/app/src/main/java/moments/moments/DataDbAdapter.java
+@@ -1,20 +1,4 @@
+-/*
+- * Copyright (C) 2008 Google Inc.
+- * 
+- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+- * use this file except in compliance with the License. You may obtain a copy of
+- * the License at
+- * 
+- * http://www.apache.org/licenses/LICENSE-2.0
+- * 
+- * Unless required by applicable law or agreed to in writing, software
+- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+- * License for the specific language governing permissions and limitations under
+- * the License.
+- */
+-
+-package moments.moments;;
++package moments.moments;
+ 
+ import android.content.ContentValues;
+ import android.content.Context;
+@@ -24,11 +8,21 @@ import android.database.sqlite.SQLiteDatabase;
+ import android.database.sqlite.SQLiteOpenHelper;
+ import android.util.Log;
+ 
++/**
++ * Simple notes database access helper class. Defines the basic CRUD operations
++ * for the notepad example, and gives the ability to list all notes as well as
++ * retrieve or modify a specific note.
++ *
++ * This has been improved from the first version of this tutorial through the
++ * addition of better error handling and also using returning a Cursor instead
++ * of using a collection of inner classes (which is less scalable and not
++ * recommended).
++ */
+ public class DataDbAdapter {
+ 
+     public static final String KEY_TYPE = "type";
+     public static final String KEY_BODY = "body";
+-    public static final String KEY_ID = "_id";
++    public static final String KEY_ROWID = "_id";
+ 
+     private static final String TAG = "DataDbAdapter";
+     private DatabaseHelper mDbHelper;
+@@ -38,8 +32,8 @@ public class DataDbAdapter {
+      * Database creation sql statement
+      */
+     private static final String DATABASE_CREATE =
+-            "create table data (_id integer primary key autoincrement, "
+-                    + "title text not null, body text not null);";
++            "create table notes (_id integer primary key autoincrement, "
++                    + "type text not null, body text not null);";
+ 
+     private static final String DATABASE_NAME = "data";
+     private static final String DATABASE_TABLE = "notes";
+@@ -103,7 +97,7 @@ public class DataDbAdapter {
+      * successfully created return the new rowId for that note, otherwise return
+      * a -1 to indicate failure.
+      *
+-     * @param type the type of the note
++     * @param type the title of the note
+      * @param body the body of the note
+      * @return rowId or -1 if failed
+      */
+@@ -130,7 +124,7 @@ public class DataDbAdapter {
+      */
+     public Cursor fetchAllNotes() {
+ 
+-        return mDb.query(DATABASE_TABLE, new String[] {KEY_ID, KEY_TYPE,
++        return mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TYPE,
+                 KEY_BODY}, null, null, null, null, null);
+     }
+ 
+@@ -145,8 +139,8 @@ public class DataDbAdapter {
+ 
+         Cursor mCursor =
+ 
+-                mDb.query(true, DATABASE_TABLE, new String[] {KEY_ID,
+-                                KEY_TYPE, KEY_BODY}, KEY_ID + "=" + rowId, null,
++                mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
++                                KEY_TYPE, KEY_BODY}, KEY_ROWID + "=" + rowId, null,
+                         null, null, null, null);
+         if (mCursor != null) {
+             mCursor.moveToFirst();
+@@ -154,4 +148,4 @@ public class DataDbAdapter {
+         return mCursor;
+ 
+     }
+-}
++}
+\ No newline at end of file
+diff --git a/Moments/app/src/main/java/moments/moments/MainActivity.java b/Moments/app/src/main/java/moments/moments/MainActivity.java
+index 9f66c84..b5a090e 100644
+--- a/Moments/app/src/main/java/moments/moments/MainActivity.java
++++ b/Moments/app/src/main/java/moments/moments/MainActivity.java
+@@ -10,7 +10,11 @@ import android.support.v7.app.ActionBarActivity;
+ import android.os.Bundle;
+ import android.view.Menu;
+ import android.view.MenuItem;
++import com.parse.Parse;
++import com.parse.ParseInstallation;
+ import android.view.View;
++import android.view.animation.Animation;
++import android.view.animation.AnimationUtils;
+ import android.widget.ImageButton;
+ import android.widget.Toast;
+ 
+@@ -23,18 +27,20 @@ public class MainActivity extends MomentPromptActivity {
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
++       ParseInstallation.getCurrentInstallation().saveInBackground();
++        ParseInstallation.getCurrentInstallation().saveInBackground();
+     }
+     
+     public void addText(View view) {
+-    	showPrompt(this, Type.TEXT);
++    	showPrompt(Type.TEXT);
+     }
+-    
++
+     public void addImage(View view) {
+-    	showPrompt(this, Type.IMAGE);    	
++    	showPrompt(Type.IMAGE);    	
+     }
+     
+     public void addLink(View view) {
+-    	showPrompt(this, Type.LINK);
++    	showPrompt(Type.LINK);
+     }
+     
+     public void openJar(View view) {
+diff --git a/Moments/app/src/main/java/moments/moments/MomentPromptActivity.java b/Moments/app/src/main/java/moments/moments/MomentPromptActivity.java
+index 7b875fb..ffea41c 100644
+--- a/Moments/app/src/main/java/moments/moments/MomentPromptActivity.java
++++ b/Moments/app/src/main/java/moments/moments/MomentPromptActivity.java
+@@ -1,7 +1,7 @@
+-package com.fffb.moment;
++package moments.moments;
+ 
+-import com.moments.moments.DataDbAdapter;
+-import com.moments.moments.Type;
++import moments.moments.DataDbAdapter;
++import moments.moments.Type;
+ 
+ import android.app.Activity;
+ import android.app.AlertDialog;
+@@ -12,21 +12,23 @@ import android.os.Bundle;
+ import android.provider.MediaStore;
+ import android.widget.Toast;
+ 
++import fffb.moments.app.LinkInputDialog;
++import fffb.moments.app.TextInputDialog;
++
+ public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
+-	private int mDataNumber = 1;
+-    private DataDbAdapter mDbHelper;
++    public DataDbAdapter mDbHelper;
+     
+     public static final int RESULT_LOAD_IMAGE = 1;
+     public static final int RESULT_TAKE_IMAGE = 2;
+     
+-	public static void showPrompt(final MomentPromptActivity activity, Type type) {
++	public void showPrompt(Type type) {
+ 		switch(type){
+ 		case TEXT:
+ 			TextInputDialog tDialog = new TextInputDialog();
+-	    	tDialog.show(activity.getFragmentManager(), "textInput");
++	    	tDialog.show(getFragmentManager(), "textInput");
+ 	    	break;
+ 		case IMAGE:
+-			AlertDialog.Builder builder = new AlertDialog.Builder(activity);
++			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+ 	    	builder.setTitle(R.string.image_source_prompt)
+ 	    	.setItems(R.array.image_sources, new DialogInterface.OnClickListener() {
+ 	            public void onClick(DialogInterface dialog, int which) {
+@@ -35,11 +37,11 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
+ 	            switch(which){
+ 	            case 0:
+ 	            	Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+-	            	activity.startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
++	            	startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
+ 	            	break;
+ 	            case 1:
+ 	            	Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+-	                activity.startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
++	                startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
+ 	            	break;
+ 	            }
+ 	        }
+@@ -48,7 +50,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
+ 	    	break;
+ 		case LINK:
+ 			LinkInputDialog lDialog = new LinkInputDialog();
+-	    	lDialog.show(activity.getFragmentManager(), "linkInput");
++	    	lDialog.show(getFragmentManager(), "linkInput");
+ 	    	break;
+ 		}
+ 	}
+@@ -93,9 +95,32 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
+         }
+     }
+     
+-    private void createNote(Type type, String text) {
+-        String dataName = "Note " + mDataNumber++;
+-        mDbHelper.createNote(Type.TEXT, "test");
++    public void createNote(Type type, String text) {
++        mDbHelper.createNote(type, text);
+     }
+-	
++
++	public Data getNote() {
++		// Column Indexes:
++		// body = 2
++		// type = 1
++		// id = 0
++
++		Cursor allNotes = mDbHelper.fetchAllNotes();
++		int noteCount = allNotes.getCount();
++		int randIndex = Math.floor(Math.random() * noteCount);
++        allNotes.moveToPosition(randIndex);
++
++        Type type;
++        String typeAsString = allNotes.getString(1);
++        if (typeAsString == "text") {
++            type = Type.TEXT;
++        } else if (typeAsString == "image") {
++            type = Type.IMAGE;
++        } else {
++            type = Type.LINK;
++        }
++        String text = allNotes.getString(2);
++
++        return new Data(type, text);
++	}
+ }
+diff --git a/Moments/app/src/main/java/moments/moments/OurDatabase.java b/Moments/app/src/main/java/moments/moments/OurDatabase.java
+deleted file mode 100644
+index dde7c7a..0000000
+--- a/Moments/app/src/main/java/moments/moments/OurDatabase.java
++++ /dev/null
+@@ -1,8 +0,0 @@
+-package moments.moments;
+-
+-public interface OurDatabase {
+-
+-    public Data getRandomData();
+-
+-    public void putData(Data data);
+-}
+diff --git a/Moments/app/src/main/java/moments/moments/TakingWidgetProvider.java b/Moments/app/src/main/java/moments/moments/TakingWidgetProvider.java
+index 31184d0..e50ca8c 100644
+--- a/Moments/app/src/main/java/moments/moments/TakingWidgetProvider.java
++++ b/Moments/app/src/main/java/moments/moments/TakingWidgetProvider.java
+@@ -23,18 +23,16 @@ public class TakingWidgetProvider extends AppWidgetProvider {
+             // Create an Intent to launch WidgetActivity
+             Intent takeIntent = new Intent(context, WTakeActivity.class);
+             takeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+-            PendingIntent pendingTextIntent = PendingIntent.getActivity(context, 0, takeIntent, 0);
++            PendingIntent pendingTakeIntent = PendingIntent.getActivity(context, 0, takeIntent, 0);
+ 
+             // Get the layout for the App Widget and attach an on-click listener
+             // to the button
+-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.takewidget); //TODO: the layout might be something else
+-            views.setOnClickPendingIntent(R.id.jar, takeIntent);
++            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget_jar); //TODO: the layout might be something else
++            views.setOnClickPendingIntent(R.id.jar, pendingTakeIntent);
+ 
+             // Tell the AppWidgetManager to perform an update on the current app widget
+             appWidgetManager.updateAppWidget(appWidgetId, views);
+ 
+-            Log.d("HELEN", "okay logs work...");
+-
+         }
+     }
+ 
+diff --git a/Moments/app/src/main/java/moments/moments/WImageAddActivity.java b/Moments/app/src/main/java/moments/moments/WImageAddActivity.java
+index 518c939..16f2c30 100644
+--- a/Moments/app/src/main/java/moments/moments/WImageAddActivity.java
++++ b/Moments/app/src/main/java/moments/moments/WImageAddActivity.java
+@@ -12,11 +12,11 @@ import android.util.Log;
+ /**
+  * Created by hzhou1235 on 6/27/15.
+  */
+-public class WImageAddActivity extends Activity {
++public class WImageAddActivity extends MomentPromptActivity {
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
+-        setContentView(R.layout.text_input_dialog);
++        Log.d("HELEN", "W_IMAGE_ADD");
++        super.showPrompt(Type.IMAGE);
+     }
+ }
+diff --git a/Moments/app/src/main/java/moments/moments/WLinkAddActivity.java b/Moments/app/src/main/java/moments/moments/WLinkAddActivity.java
+index 4905d95..a0fa6fb 100644
+--- a/Moments/app/src/main/java/moments/moments/WLinkAddActivity.java
++++ b/Moments/app/src/main/java/moments/moments/WLinkAddActivity.java
+@@ -11,11 +11,11 @@ import android.util.Log;
+ /**
+  * Created by hzhou1235 on 6/27/15.
+  */
+-public class WLinkAddActivity extends Activity {
++public class WLinkAddActivity extends MomentPromptActivity {
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
+-        setContentView(R.layout.link_input_dialog);
++        Log.d("HELEN", "W_LINK_ADD");
++        super.showPrompt(Type.LINK);
+     }
+ }
+diff --git a/Moments/app/src/main/java/moments/moments/WTextAddActivity.java b/Moments/app/src/main/java/moments/moments/WTextAddActivity.java
+index bfbe5d1..9f714e5 100644
+--- a/Moments/app/src/main/java/moments/moments/WTextAddActivity.java
++++ b/Moments/app/src/main/java/moments/moments/WTextAddActivity.java
+@@ -12,12 +12,11 @@ import android.view.MenuItem;
+ /**
+  * Created by hzhou1235 on 6/27/15.
+  */
+-public class WTextAddActivity extends Activity {
++public class WTextAddActivity extends MomentPromptActivity {
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
+-        setContentView(R.layout.text_input_dialog);
+-
++        Log.d("HELEN", "W_TEXT_ADD");
++        super.showPrompt(Type.TEXT);
+     }
+ }
+diff --git a/Moments/app/src/main/res/layout/appwidget_jar.xml b/Moments/app/src/main/res/layout/appwidget_jar.xml
+index d5d1d04..5fa922e 100644
+--- a/Moments/app/src/main/res/layout/appwidget_jar.xml
++++ b/Moments/app/src/main/res/layout/appwidget_jar.xml
+@@ -2,11 +2,13 @@
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent" android:layout_height="match_parent">
+ 
+-    <Button
++    <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/take_jar"
++        android:clickable="true"
++        android:background="@drawable/jarweb"
+         android:layout_centerVertical="true"
+-        android:layout_centerHorizontal="true"
+-        android:background="@drawable/jarweb" />
++        android:layout_alignParentLeft="true"
++        android:layout_alignParentStart="true" />
+ </RelativeLayout>
+\ No newline at end of file
+diff --git a/Moments/backup Moments.iml b/Moments/backup Moments.iml
+new file mode 100644
+index 0000000..ec8f395
+--- /dev/null
++++ b/Moments/backup Moments.iml	
+@@ -0,0 +1,49 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<<<<<<< HEAD
++<module external.linked.project.id="Moments" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
++=======
++<<<<<<< HEAD
++<module external.linked.project.id="Moments" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
++=======
++<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
++>>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
++>>>>>>> cf4e5ad0e6077a063c52d9634b977814fdb7c30c
++  <component name="FacetManager">
++    <facet type="java-gradle" name="Java-Gradle">
++      <configuration>
++        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/build" />
++<<<<<<< HEAD
++        <option name="BUILDABLE" value="false" />
++=======
++<<<<<<< HEAD
++        <option name="BUILDABLE" value="false" />
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++=======
++>>>>>>> cf4e5ad0e6077a063c52d9634b977814fdb7c30c
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <output url="file://$MODULE_DIR$/build/classes/main" />
++    <output-test url="file://$MODULE_DIR$/build/classes/test" />
++>>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++<<<<<<< HEAD
++</module>
++=======
++<<<<<<< HEAD
++</module>
++=======
++</module>
++
++>>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
++>>>>>>> cf4e5ad0e6077a063c52d9634b977814fdb7c30c
+diff --git a/Moments/settings.gradle b/Moments/settings.gradle
+index 9d495b3..e69de29 100644
+--- a/Moments/settings.gradle
++++ b/Moments/settings.gradle
+@@ -1 +0,0 @@
+-include ':app'
+\ No newline at end of file
