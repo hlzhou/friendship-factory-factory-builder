@@ -17,7 +17,8 @@ public class MainActivity extends Activity implements TextInputDialog.TextSubmit
     private int mDataNumber = 1;
     private DataDbAdapter mDbHelper;
     
-    private static int RESULT_LOAD_IMAGE = 1;
+    private static final int RESULT_LOAD_IMAGE = 1;
+    private static final int RESULT_TAKE_IMAGE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +46,46 @@ public class MainActivity extends Activity implements TextInputDialog.TextSubmit
 	}
     
     public void addImage(View view) {
-    	Intent i = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(i, RESULT_LOAD_IMAGE);
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setTitle(R.string.image_source_prompt)
+    	.setItems(R.array.image_sources, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            // The 'which' argument contains the index position
+            // of the selected item
+            switch(which){
+            case 0:
+            	Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            	startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
+            	break;
+            case 1:
+            	Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
+            	break;
+            }
+        }
+    	});
+    	builder.show();
+    	
     }
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
-            Uri selectedImage = data.getData();
-            createNote(Type.IMAGE, selectedImage.toString());
+        switch(requestCode) {
+        case RESULT_LOAD_IMAGE:
+        	if(resultCode == RESULT_OK && data != null) {
+        		Uri selectedImage = data.getData();
+        		Toast.makeText(this, "Got an image from gallery: " + selectedImage.toString(), Toast.LENGTH_SHORT).show();
+                createNote(Type.IMAGE, selectedImage.toString());
+        	}
+        	break;
+        case RESULT_TAKE_IMAGE:
+        	if(resultCode == RESULT_OK && data != null) {
+        		Uri selectedImage = data.getData();
+        		Toast.makeText(this, "Took an image from the camera: " + selectedImage.toString(), Toast.LENGTH_SHORT).show();
+                createNote(Type.IMAGE, selectedImage.toString());
+        	}
+        	break;
         }
     }
     
