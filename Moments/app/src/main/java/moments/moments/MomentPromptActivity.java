@@ -95,7 +95,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
                 onImageSubmit();
-        		MomentDisplayer.showMoment(this, new Data(Type.IMAGE, selectedImage.toString()));
                 createNote(Type.IMAGE, selectedImage.toString());
         	}
         	break;
