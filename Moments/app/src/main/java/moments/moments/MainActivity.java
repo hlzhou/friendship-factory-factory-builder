@@ -16,6 +16,8 @@ public class MainActivity extends Activity implements TextInputDialog.TextSubmit
     
     private int mDataNumber = 1;
     private DataDbAdapter mDbHelper;
+    
+    private static int RESULT_LOAD_IMAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,17 @@ public class MainActivity extends Activity implements TextInputDialog.TextSubmit
 	}
     
     public void addImage(View view) {
-    	
+    	Intent i = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, RESULT_LOAD_IMAGE);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+            Uri selectedImage = data.getData();
+            createNote(Type.IMAGE, selectedImage.toString());
+        }
     }
     
     public void addLink(View view) {
