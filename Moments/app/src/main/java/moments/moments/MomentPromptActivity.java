@@ -114,9 +114,9 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
         Type type;
         String typeAsString = allNotes.getString(1);
-        if (typeAsString == "text") {
+        if (typeAsString.equals("test")) {
             type = Type.TEXT;
-        } else if (typeAsString == "image") {
+        } else if (typeAsString.equals("image")) {
             type = Type.IMAGE;
         } else {
             type = Type.LINK;

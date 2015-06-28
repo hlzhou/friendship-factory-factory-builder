@@ -1,3 +1,10 @@
+package moments.moments;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.Toast;
+
 public class LightInputActivity extends MomentPromptActivity{
 	@Override
     protected void onCreate(Bundle savedInstanceState) {

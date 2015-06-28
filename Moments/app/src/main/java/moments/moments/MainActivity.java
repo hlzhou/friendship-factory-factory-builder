@@ -56,5 +56,6 @@ public class MainActivity extends MomentPromptActivity {
     	Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
     	view.startAnimation(shake);
     	Toast.makeText(this, "Opening jar", Toast.LENGTH_SHORT).show();
+        MomentDisplayer.showMoment(this, getNote());
     }
 }
