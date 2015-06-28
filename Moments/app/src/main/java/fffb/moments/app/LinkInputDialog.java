@@ -1,4 +1,4 @@
-package fffb.moments.app;
+package com.fffb.moment;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,16 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import moments.moments.R;
-import moments.moments.Type;
-
-public class TextInputDialog extends DialogFragment{
+public class LinkInputDialog extends DialogFragment{
 	
-	public interface TextSubmitter {
-		public void submitText(String string);
+	public interface LinkSubmitter {
+		public void submitLink(String string);
 	}
 	
-	private TextSubmitter mTextSubmitter;
+	private LinkSubmitter mLinkSubmitter;
 	
 	@Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -29,19 +26,19 @@ public class TextInputDialog extends DialogFragment{
 
 	    // Inflate and set the layout for the dialog
 	    // Pass null as the parent view because its going in the dialog layout
-	    final View view = inflater.inflate(R.layout.text_input_dialog, null);
+	    final View view = inflater.inflate(R.layout.link_input_dialog, null);
 	    builder.setView(view)
 	    // Add action buttons
 	           .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
-	                   EditText happyText = (EditText) view.findViewById(R.id.text);
-	            	   mTextSubmitter.submitText(happyText.getText().toString());
+	                   EditText happyText = (EditText) view.findViewById(R.id.link);
+	            	   mLinkSubmitter.submitLink(happyText.getText().toString());
 	               }
 	           })
 	           .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 	               public void onClick(DialogInterface dialog, int id) {
-	                   TextInputDialog.this.getDialog().cancel();
+	                   LinkInputDialog.this.getDialog().cancel();
 	               }
 	           });      
 	    return builder.create();
@@ -52,11 +49,11 @@ public class TextInputDialog extends DialogFragment{
 		super.onAttach(activity);
 		try {
             // Instantiate the NoticeDialogListener so we can send events to the host
-            mTextSubmitter = (TextSubmitter) activity;
+            mLinkSubmitter = (LinkSubmitter) activity;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString()
-                    + " must implement TextSubmitter");
+                    + " must implement LinkSubmitter");
         }
 	}
 }
