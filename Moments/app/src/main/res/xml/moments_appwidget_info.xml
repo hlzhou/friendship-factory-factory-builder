@@ -8,7 +8,7 @@
     android:minHeight="40dp"
     android:minResizeHeight="30dp"
     android:minResizeWidth="30dp"
-    android:updatePeriodMillis="86400000"
+    android:updatePeriodMillis="2000"
     android:previewImage="@drawable/smiley_icon"
     android:initialLayout="@layout/appwidget"
     android:configure="moments.moments.AppWidgetConfigureActivity"

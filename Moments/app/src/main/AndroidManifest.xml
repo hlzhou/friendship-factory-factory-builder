@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".WTextAddActivity"
+            android:theme="@android:style/Theme.Dialog"></activity>
+
         <receiver android:name=".MomentsAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
