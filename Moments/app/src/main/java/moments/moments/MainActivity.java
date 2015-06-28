@@ -98,4 +98,10 @@ public class MainActivity extends Activity implements TextInputDialog.TextSubmit
         String dataName = "Note " + mDataNumber++;
         mDbHelper.createNote(Type.TEXT, "test");
     }
+    
+    public void openJar(View view) {
+    	Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+    	view.startAnimation(shake);
+    	Toast.makeText(this, "Opening jar", Toast.LENGTH_SHORT).show();
+    }
 }
