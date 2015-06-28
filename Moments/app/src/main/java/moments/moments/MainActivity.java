@@ -20,11 +20,17 @@ import fffb.moments.app.TextInputDialog;
 import fffb.moments.app.LinkInputDialog;
 
 public class MainActivity extends MomentPromptActivity {
+    
+    private MediaPlayer shakeNoise;
+	private MediaPlayer ripNoise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        shakeNoise = MediaPlayer.create(this, R.raw.shake);
+        ripNoise = MediaPlayer.create(this, R.raw.paperripping);
     }
 
     public void addText(View view) {
@@ -39,10 +45,37 @@ public class MainActivity extends MomentPromptActivity {
     	showPrompt(Type.LINK, false);
     }
     
+    @Override
+    public void submitText(String text){
+    	super.submitText(text);
+    	playInsertNoise();
+    }
+    
+    @Override
+    public void submitLink(String text) {
+    	super.submitLink(text);
+    	playInsertNoise();
+    }
+    
+    @Override
+    public void onImageSubmit() {
+    	super.onImageSubmit();
+    	playInsertNoise();
+    }
+    
     public void openJar(View view) {
     	Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
     	view.startAnimation(shake);
     	Toast.makeText(this, "Opening jar", Toast.LENGTH_SHORT).show();
+    	playOpenJarNoise();
         MomentDisplayer.showMoment(this, getNote());
+    }
+    
+    public void playInsertNoise() {
+    	ripNoise.start();
+    }
+    
+    public void playOpenJarNoise() {
+    	shakeNoise.start();
     }
 }
