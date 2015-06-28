@@ -16,7 +16,7 @@ import moments.moments.Type;
 public class TextInputDialog extends DialogFragment{
 	
 	public interface TextSubmitter {
-		public void submitText(String string, Type type);
+		public void submitText(String string);
 	}
 	
 	private TextSubmitter mTextSubmitter;
@@ -36,7 +36,7 @@ public class TextInputDialog extends DialogFragment{
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
 	                   EditText happyText = (EditText) view.findViewById(R.id.text);
-	            	   mTextSubmitter.submitText(happyText.getText().toString(), Type.TEXT);
+	            	   mTextSubmitter.submitText(happyText.getText().toString());
 	               }
 	           })
 	           .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
