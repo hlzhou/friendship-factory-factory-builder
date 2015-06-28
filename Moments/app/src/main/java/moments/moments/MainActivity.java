@@ -1,6 +1,11 @@
 package moments.moments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import fffb.moments.app.TextInputDialog;
-
+import fffb.moments.app.LinkInputDialog;
 
 public class MainActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
     

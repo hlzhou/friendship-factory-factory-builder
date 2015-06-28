@@ -1,4 +1,4 @@
-package com.fffb.moment;
+package fffb.moments.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+
+import moments.moments.R;
 
 public class LinkInputDialog extends DialogFragment{
 	

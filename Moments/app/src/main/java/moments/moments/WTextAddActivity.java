@@ -18,5 +18,6 @@ public class WTextAddActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
         setContentView(R.layout.text_input_dialog);
+
     }
 }
