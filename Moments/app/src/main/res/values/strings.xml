@@ -8,5 +8,10 @@
     <string name="submit">Into the Jar!</string>
     <string name="cancel">Nevermind.</string>
     <string name="prompt_link">Give me a great link!</string>
+    <string name="image_source_prompt">Image Source?</string>
+    <string-array name="image_sources">
+        <item >Camera</item>
+        <item >Gallery</item>
+    </string-array>
 
 </resources>
