@@ -31,17 +31,6 @@ public class MainActivity extends MomentPromptActivity {
     	showPrompt(Type.TEXT, false);
     }
 
-    public void submitText(String text) {
-    	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    	createNote(Type.TEXT, text);
-    }
-    
-    @Override
-	public void submitLink(String text) {
-		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    	createNote(Type.LINK, text);
-	}
-
     public void addImage(View view) {
     	showPrompt(Type.IMAGE, false);
     }

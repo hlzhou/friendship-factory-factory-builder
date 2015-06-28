@@ -8,16 +8,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         tools:context="fffb.moments.app.MainActivity"
-        android:background="#ffffffff">
+        android:background="#ffffff">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
 
             <ImageButton
                 android:layout_width="fill_parent"
@@ -61,14 +61,31 @@
                 android:layout_marginRight="5dp" />
 
         </LinearLayout>
-        
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="166dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="Moments"
+                android:textStyle="italic"
+
+                android:id="@+id/textView2"
+                android:textSize="30dp" />
+        </FrameLayout>
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/jar"
             android:onClick="openJar"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_margin="40dp"
-            android:src="@drawable/jarweb"/>
+            android:src="@drawable/jarweb"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="80dp" />
 
     </LinearLayout>

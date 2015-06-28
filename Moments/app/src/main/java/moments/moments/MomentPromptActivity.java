@@ -127,6 +127,10 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
 		Cursor allNotes = mDbHelper.fetchAllNotes();
 		int noteCount = allNotes.getCount();
+
+        if (noteCount == 0) {
+            return new Data(Type.TEXT, "Add something to your jar to get started!");
+        }
 		int randIndex = (int) Math.floor(Math.random() * noteCount);
         allNotes.moveToPosition(randIndex);
 
