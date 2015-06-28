@@ -15,12 +15,35 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Jar.svg"
-   inkscape:export-filename="C:\Users\Eden\Documents\Programming\workspace\friendship-factory-factory-builder\Moments\app\src\main\res\drawable-xxxhdpi\jar.png"
-   inkscape:export-xdpi="640"
-   inkscape:export-ydpi="640">
+   sodipodi:docname="JarLogo.svg"
+   inkscape:export-filename="C:\Users\Eden\Documents\Programming\workspace\friendship-factory-factory-builder\Moments\app\src\main\res\drawable-mdpi\jarlogo.png"
+   inkscape:export-xdpi="160"
+   inkscape:export-ydpi="160">
   <defs
      id="defs4">
+    <linearGradient
+       id="linearGradient4098">
+      <stop
+         style="stop-color:#55efff;stop-opacity:1;"
+         offset="0"
+         id="stop4100" />
+      <stop
+         style="stop-color:#c8faff;stop-opacity:1;"
+         offset="1"
+         id="stop4102" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4056">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4058" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4060" />
+    </linearGradient>
     <linearGradient
        id="linearGradient4008">
       <stop
@@ -41,6 +64,55 @@
        x2="445.49359"
        y2="579.97668"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4056"
+       id="linearGradient4062"
+       x1="318.40515"
+       y1="419.05969"
+       x2="445.97729"
+       y2="218.94847"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4056-1"
+       id="linearGradient4062-1"
+       x1="318.40515"
+       y1="419.05969"
+       x2="445.97729"
+       y2="218.94847"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4056-1">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4058-5" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4060-7" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(1.1214751,0,0,1.1115026,-78.132231,-31.079274)"
+       y2="218.94847"
+       x2="445.97729"
+       y1="709.17603"
+       x1="170.37569"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4079"
+       xlink:href="#linearGradient4056-1"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4098"
+       id="linearGradient4106"
+       x1="301.9346"
+       y1="575.77222"
+       x2="300.52039"
+       y2="287.97974"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -50,18 +122,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="208.86331"
-     inkscape:cy="595.57563"
+     inkscape:cx="172.4193"
+     inkscape:cy="655.64468"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="944"
-     inkscape:window-height="1001"
-     inkscape:window-x="960"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -80,7 +152,7 @@
      id="layer1"
      style="display:inline">
     <rect
-       style="opacity:0.98999999000000005;fill:#47eeff;fill-opacity:0.74468082;fill-rule:nonzero;stroke:none;stroke-width:2.75300002000000000;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94680852000000004;stroke-dasharray:none;stroke-dashoffset:0"
+       style="opacity:0.98999999000000005;fill:url(#linearGradient4106);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.75300002000000000;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.94680852000000004;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect4052"
        width="282.13559"
        height="299.81326"
