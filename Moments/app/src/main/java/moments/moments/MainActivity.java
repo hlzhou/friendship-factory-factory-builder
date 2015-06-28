@@ -21,15 +21,15 @@ public class MainActivity extends MomentPromptActivity {
     }
     
     public void addText(View view) {
-    	showPrompt(this, Type.TEXT);
+    	showPrompt(Type.TEXT);
     }
     
     public void addImage(View view) {
-    	showPrompt(this, Type.IMAGE);    	
+    	showPrompt(Type.IMAGE);    	
     }
     
     public void addLink(View view) {
-    	showPrompt(this, Type.LINK);
+    	showPrompt(Type.LINK);
     }
     
     public void openJar(View view) {
