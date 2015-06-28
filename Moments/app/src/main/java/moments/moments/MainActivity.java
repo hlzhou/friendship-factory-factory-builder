@@ -27,7 +27,7 @@ public class MainActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Parse.initialize(this, "eJQBzNcoqThWmykrIskhwcVgvuZyVFBqztpeecst", "KTM5cp0yA3Tdc6q0lHvNhq7kdqX74Kim2FdRjAOF");
+       ParseInstallation.getCurrentInstallation().saveInBackground();
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
     
