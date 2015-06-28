@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2008 Google Inc.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
-package moments.moments;;
+package moments.moments;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -24,11 +8,21 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+/**
+ * Simple notes database access helper class. Defines the basic CRUD operations
+ * for the notepad example, and gives the ability to list all notes as well as
+ * retrieve or modify a specific note.
+ *
+ * This has been improved from the first version of this tutorial through the
+ * addition of better error handling and also using returning a Cursor instead
+ * of using a collection of inner classes (which is less scalable and not
+ * recommended).
+ */
 public class DataDbAdapter {
 
     public static final String KEY_TYPE = "type";
     public static final String KEY_BODY = "body";
-    public static final String KEY_ID = "_id";
+    public static final String KEY_ROWID = "_id";
 
     private static final String TAG = "DataDbAdapter";
     private DatabaseHelper mDbHelper;
@@ -38,8 +32,8 @@ public class DataDbAdapter {
      * Database creation sql statement
      */
     private static final String DATABASE_CREATE =
-            "create table data (_id integer primary key autoincrement, "
-                    + "title text not null, body text not null);";
+            "create table notes (_id integer primary key autoincrement, "
+                    + "type text not null, body text not null);";
 
     private static final String DATABASE_NAME = "data";
     private static final String DATABASE_TABLE = "notes";
@@ -103,7 +97,7 @@ public class DataDbAdapter {
      * successfully created return the new rowId for that note, otherwise return
      * a -1 to indicate failure.
      *
-     * @param type the type of the note
+     * @param type the title of the note
      * @param body the body of the note
      * @return rowId or -1 if failed
      */
@@ -130,7 +124,7 @@ public class DataDbAdapter {
      */
     public Cursor fetchAllNotes() {
 
-        return mDb.query(DATABASE_TABLE, new String[] {KEY_ID, KEY_TYPE,
+        return mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TYPE,
                 KEY_BODY}, null, null, null, null, null);
     }
 
@@ -145,8 +139,8 @@ public class DataDbAdapter {
 
         Cursor mCursor =
 
-                mDb.query(true, DATABASE_TABLE, new String[] {KEY_ID,
-                                KEY_TYPE, KEY_BODY}, KEY_ID + "=" + rowId, null,
+                mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
+                                KEY_TYPE, KEY_BODY}, KEY_ROWID + "=" + rowId, null,
                         null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();

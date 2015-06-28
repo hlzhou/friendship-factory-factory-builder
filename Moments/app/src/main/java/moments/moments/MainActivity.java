@@ -34,11 +34,11 @@ public class MainActivity extends MomentPromptActivity {
         mDbHelper = new DataDbAdapter(this);
         mDbHelper.open();
     }
-    
+
     public void addText(View view) {
     	showPrompt(Type.TEXT);
     }
-    
+
     public void submitText(String text) {
     	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     	createNote(Type.TEXT, text);

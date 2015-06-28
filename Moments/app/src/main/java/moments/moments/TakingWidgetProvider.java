@@ -33,8 +33,6 @@ public class TakingWidgetProvider extends AppWidgetProvider {
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
 
-            Log.d("HELEN", "okay logs work...");
-
         }
     }
 
