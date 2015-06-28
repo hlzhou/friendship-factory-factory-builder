@@ -5,11 +5,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-<<<<<<< HEAD
-        <option name="gradleJvm" value="1.7" />
-=======
-        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.2.1" />
->>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -20,4 +15,3 @@
     </option>
   </component>
 </project>
-

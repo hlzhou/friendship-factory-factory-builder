@@ -27,31 +27,14 @@ public class MainActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Parse.initialize(this, "eJQBzNcoqThWmykrIskhwcVgvuZyVFBqztpeecst", "KTM5cp0yA3Tdc6q0lHvNhq7kdqX74Kim2FdRjAOF");
+       ParseInstallation.getCurrentInstallation().saveInBackground();
         ParseInstallation.getCurrentInstallation().saveInBackground();
-    }
-
-
-        mDbHelper = new DataDbAdapter(this);
-        mDbHelper.open();
     }
     
     public void addText(View view) {
     	showPrompt(Type.TEXT);
     }
-    
-    public void submitText(String text) {
-    	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    	createNote(Type.TEXT, text);
-    }
-    
-    @Override
-	public void submitLink(String text) {
-		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    	createNote(Type.LINK, text);
-	}
-    
-=======
+
     public void addImage(View view) {
     	showPrompt(Type.IMAGE);    	
     }
