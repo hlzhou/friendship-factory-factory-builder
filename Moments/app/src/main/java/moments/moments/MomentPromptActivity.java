@@ -1,7 +1,7 @@
-package com.fffb.moment;
+package moments.moments;
 
-import com.moments.moments.DataDbAdapter;
-import com.moments.moments.Type;
+import moments.moments.DataDbAdapter;
+import moments.moments.Type;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,6 +11,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
+
+import fffb.moments.app.LinkInputDialog;
+import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
 	private int mDataNumber = 1;

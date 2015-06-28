@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ public class MainActivity extends MomentPromptActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 
 
@@ -48,7 +51,6 @@ public class MainActivity extends MomentPromptActivity {
     	createNote(Type.LINK, text);
 	}
     
-=======
     public void addImage(View view) {
     	showPrompt(Type.IMAGE);    	
     }
