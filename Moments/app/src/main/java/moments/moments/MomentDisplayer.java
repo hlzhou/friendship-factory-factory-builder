@@ -13,10 +13,6 @@ public class MomentDisplayer {
 	
 	private static boolean showTextMoment(Activity activity, String text){
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		View view = activity.getLayoutInflater().inflate(R.layout.text_moment_dialog, null);
-		//TextView tv = (TextView) view.findViewById(R.id.text);
-		//tv.setText(text);
-    	//builder.setView(view);
 		builder.setMessage(text);
     	builder.show();
 		return true;
