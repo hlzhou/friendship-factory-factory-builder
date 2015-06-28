@@ -89,10 +89,6 @@
     <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
-<<<<<<< HEAD
-=======
     <orderEntry type="library" exported="" name="Parse-1.9.2" level="project" />
->>>>>>> 25dd1c79f8df11e9a02f352bb0cefd141f55cec8
-    <orderEntry type="library" exported="" name="bolts-android-1.2.0" level="project" />
   </component>
 </module>

@@ -12,19 +12,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
-
+import moments.moments.MomentDisplayer;
 import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
-<<<<<<< HEAD
 	public int mDataNumber = 1;
-    public
-	DataDbAdapter mDbHelper;
-=======
     public DataDbAdapter mDbHelper;
->>>>>>> 25dd1c79f8df11e9a02f352bb0cefd141f55cec8
-    
+
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
     
