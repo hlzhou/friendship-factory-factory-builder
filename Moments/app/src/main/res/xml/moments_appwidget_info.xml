@@ -6,11 +6,13 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="40dp"
     android:minHeight="40dp"
+    android:minResizeHeight="30dp"
+    android:minResizeWidth="30dp"
     android:updatePeriodMillis="86400000"
-    android:previewImage="@drawable/app_widget_preview"
+    android:previewImage="@drawable/smiley_icon"
     android:initialLayout="@layout/appwidget"
     android:configure="moments.moments.AppWidgetConfigureActivity"
     android:resizeMode="horizontal|vertical"
-    android:widgetCategory="home_screen|keyguard"
-    android:initialKeyguardLayout="@layout/example_keyguard">
+    android:widgetCategory="home_screen">
+
 </appwidget-provider>
