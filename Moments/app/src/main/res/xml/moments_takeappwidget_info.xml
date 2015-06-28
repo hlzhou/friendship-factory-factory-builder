@@ -15,4 +15,5 @@
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
 
+
 </appwidget-provider>

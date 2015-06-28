@@ -11,7 +11,7 @@ public class WTakeActivity extends MomentPromptActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
+        Log.d("HELEN", "DISPLAY MOMENT");
         //setContentView(R.layout.appwidget_jar);
         MomentDisplayer.showMoment(this, getNote());
         finish();

@@ -71,6 +71,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         showMomentCapturedToast();
     	createNote(Type.TEXT, text);
         if (is_widget){
+            finish();
             System.exit(0);
         }
     }
@@ -80,6 +81,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         showMomentCapturedToast();
     	createNote(Type.LINK, text);
         if (is_widget){
+            finish();
             System.exit(0);
         }
 	}
@@ -104,6 +106,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         	break;
         }
         if (is_widget){
+            finish();
             System.exit(0);
         }
     }
@@ -129,7 +132,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
         Type type;
         String typeAsString = allNotes.getString(1);
-        if (typeAsString.equals("test")) {
+        if (typeAsString.equals("text")) {
             type = Type.TEXT;
         } else if (typeAsString.equals("image")) {
             type = Type.IMAGE;
