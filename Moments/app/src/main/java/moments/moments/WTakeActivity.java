@@ -12,6 +12,6 @@ public class WTakeActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "YAYY IT GOT TO WIDGETACTIVITY ONCREATE");
-        setContentView(R.layout.text_input_dialog);
+        setContentView(R.layout.appwidget_jar);
     }
 }
