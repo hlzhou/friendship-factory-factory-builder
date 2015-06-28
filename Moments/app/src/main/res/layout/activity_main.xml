@@ -54,6 +54,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/jar"
             android:onClick="openJar"
+            android:layout_gravity="center_vertical|center_horizontal"
             android:layout_margin="40dp"
             android:src="@drawable/jarweb"/>
 
