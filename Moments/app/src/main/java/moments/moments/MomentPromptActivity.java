@@ -16,8 +16,7 @@ import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
-	private int mDataNumber = 1;
-    private DataDbAdapter mDbHelper;
+    public DataDbAdapter mDbHelper;
     
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
@@ -96,8 +95,32 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         }
     }
     
-    private void createNote(Type type, String text) {
-        String dataName = "Note " + mDataNumber++;
-        mDbHelper.createNote(Type.TEXT, "test");
+    public void createNote(Type type, String text) {
+        mDbHelper.createNote(type, text);
     }
+
+	public Data getNote() {
+		// Column Indexes:
+		// body = 2
+		// type = 1
+		// id = 0
+
+		Cursor allNotes = mDbHelper.fetchAllNotes();
+		int noteCount = allNotes.getCount();
+		int randIndex = Math.floor(Math.random() * noteCount);
+        allNotes.moveToPosition(randIndex);
+
+        Type type;
+        String typeAsString = allNotes.getString(1);
+        if (typeAsString == "text") {
+            type = Type.TEXT;
+        } else if (typeAsString == "image") {
+            type = Type.IMAGE;
+        } else {
+            type = Type.LINK;
+        }
+        String text = allNotes.getString(2);
+
+        return new Data(type, text);
+	}
 }
