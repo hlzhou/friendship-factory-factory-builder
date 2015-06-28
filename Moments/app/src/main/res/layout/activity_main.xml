@@ -12,7 +12,11 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <ImageButton
                 android:layout_width="fill_parent"
@@ -44,5 +48,13 @@
                 android:onClick="addLink"/>
 
         </LinearLayout>
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/jar"
+            android:onClick="openJar"
+            android:layout_margin="40dp"
+            android:src="@drawable/jarweb"/>
 
     </LinearLayout>
