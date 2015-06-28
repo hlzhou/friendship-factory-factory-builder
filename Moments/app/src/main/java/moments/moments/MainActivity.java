@@ -31,7 +31,6 @@ public class MainActivity extends MomentPromptActivity {
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 
-
         mDbHelper = new DataDbAdapter(this);
         mDbHelper.open();
     }
@@ -50,7 +49,7 @@ public class MainActivity extends MomentPromptActivity {
 		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     	createNote(Type.LINK, text);
 	}
-    
+
     public void addImage(View view) {
     	showPrompt(Type.IMAGE);    	
     }

@@ -16,8 +16,9 @@ import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
-	private int mDataNumber = 1;
-    private DataDbAdapter mDbHelper;
+	public int mDataNumber = 1;
+    public
+	DataDbAdapter mDbHelper;
     
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
