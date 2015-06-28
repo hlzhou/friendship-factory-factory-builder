@@ -57,6 +57,15 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".WTextAddActivity"
+            android:theme="@android:style/Theme.Dialog"></activity>
+
+        <activity android:name=".WImageAddActivity"
+            android:theme="@android:style/Theme.Dialog"></activity>
+
+        <activity android:name=".WLinkAddActivity"
+            android:theme="@android:style/Theme.Dialog"></activity>
+
         <receiver android:name=".MomentsAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -65,6 +74,15 @@
                 android:resource="@xml/moments_appwidget_info" />
 >>>>>>> edb7c81a1f3a06cc9a4e9983c2e910c517697972
         </receiver>
+
+        <receiver android:name=".TakingWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/moments_takeappwidget_info" />
+        </receiver>
+
     </application>
 
 </manifest>
