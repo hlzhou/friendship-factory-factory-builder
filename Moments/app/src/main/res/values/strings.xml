@@ -9,6 +9,7 @@
     <string name="cancel">Nevermind.</string>
     <string name="prompt_link">Give me a great link!</string>
     <string name="image_source_prompt">Image Source?</string>
+    <string name="inserted">We\'ve captured your moment!</string>
     <string-array name="image_sources">
         <item >Camera</item>
         <item >Gallery</item>

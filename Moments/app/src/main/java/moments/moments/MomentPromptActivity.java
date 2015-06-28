@@ -12,13 +12,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
-
+import moments.moments.MomentDisplayer;
 import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter{
+	public int mDataNumber = 1;
     public DataDbAdapter mDbHelper;
-    
+
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
     private boolean is_widget = false;
@@ -31,8 +32,25 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	    	tDialog.show(getFragmentManager(), "textInput");
 	    	break;
 		case IMAGE:
-			Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setTitle(R.string.image_source_prompt)
+	    	.setItems(R.array.image_sources, new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int which) {
+	            // The 'which' argument contains the index position
+	            // of the selected item
+	            switch(which){
+	            case 0:
+	            	Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+	            	startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
+	            	break;
+	            case 1:
+	            	Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+	                startActivityForResult(getImageFromGallery, RESULT_LOAD_IMAGE);
+	            	break;
+	            }
+	        }
+	    	});
+	    	builder.show();
 	    	break;
 		case LINK:
 			LinkInputDialog lDialog = new LinkInputDialog();
@@ -50,7 +68,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     }
     
     public void submitText(String text) {
-    	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        showMomentCapturedToast();
     	createNote(Type.TEXT, text);
         if (is_widget){
             System.exit(0);
@@ -59,7 +77,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     
     @Override
 	public void submitLink(String text) {
-		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        showMomentCapturedToast();
     	createNote(Type.LINK, text);
         if (is_widget){
             System.exit(0);
@@ -73,15 +91,25 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         case RESULT_LOAD_IMAGE:
         	if(resultCode == RESULT_OK && data != null) {
         		Uri selectedImage = data.getData();
-        		Toast.makeText(this, "Got an image from gallery: " + selectedImage.toString(), Toast.LENGTH_SHORT).show();
+                showMomentCapturedToast();
+        		MomentDisplayer.showMoment(this, new Data(Type.IMAGE, selectedImage.toString()));
                 createNote(Type.IMAGE, selectedImage.toString());
-                boolean result = MomentDisplayer.showMoment(this, new Data(Type.IMAGE, selectedImage.toString()));
+        	}
+        	break;
+        case RESULT_TAKE_IMAGE:
+        	if(resultCode == RESULT_OK && data != null) {
+        		Uri selectedImage = data.getData();
+                showMomentCapturedToast();
         	}
         	break;
         }
         if (is_widget){
             System.exit(0);
         }
+    }
+
+    public void showMomentCapturedToast() {
+        Toast.makeText(this, getString(R.string.inserted), Toast.LENGTH_SHORT).show();
     }
     
     public void createNote(Type type, String text) {
@@ -101,9 +129,9 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
         Type type;
         String typeAsString = allNotes.getString(1);
-        if (typeAsString == "text") {
+        if (typeAsString.equals("test")) {
             type = Type.TEXT;
-        } else if (typeAsString == "image") {
+        } else if (typeAsString.equals("image")) {
             type = Type.IMAGE;
         } else {
             type = Type.LINK;

@@ -10,8 +10,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.parse.Parse;
-import com.parse.ParseInstallation;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,15 +25,22 @@ public class MainActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Parse.initialize(this, "eJQBzNcoqThWmykrIskhwcVgvuZyVFBqztpeecst",
-                "KTM5cp0yA3Tdc6q0lHvNhq7kdqX74Kim2FdRjAOF");
-        ParseInstallation.getCurrentInstallation().saveInBackground();
     }
-    
+
     public void addText(View view) {
     	showPrompt(Type.TEXT, false);
     }
+
+    public void submitText(String text) {
+    	Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    	createNote(Type.TEXT, text);
+    }
+    
+    @Override
+	public void submitLink(String text) {
+		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    	createNote(Type.LINK, text);
+	}
 
     public void addImage(View view) {
     	showPrompt(Type.IMAGE, false);
@@ -49,5 +54,6 @@ public class MainActivity extends MomentPromptActivity {
     	Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
     	view.startAnimation(shake);
     	Toast.makeText(this, "Opening jar", Toast.LENGTH_SHORT).show();
+        MomentDisplayer.showMoment(this, getNote());
     }
 }

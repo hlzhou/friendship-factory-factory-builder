@@ -4,8 +4,8 @@
 </PreferenceScreen> -->
 
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="40dp"
-    android:minHeight="40dp"
+    android:minWidth="35dp"
+    android:minHeight="45dp"
     android:minResizeHeight="30dp"
     android:minResizeWidth="30dp"
     android:updatePeriodMillis="2000"

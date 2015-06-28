@@ -1,23 +1,12 @@
 package moments.moments;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.view.Display;
-import android.view.LayoutInflater;
-import android.view.Window;
-import android.widget.ImageView;
+import android.os.Build;
 
-import java.io.IOException;
-
-import moments.moments.Data;
-import moments.moments.R;
 
 public class MomentDisplayer {
 	public static boolean showMoment(Activity activity, Data data) {
@@ -38,7 +27,7 @@ public class MomentDisplayer {
     	builder.show();
 		return true;
 	}
-	
+
 	private static boolean showLinkMoment(Activity activity, String text) {
 		if (!text.startsWith("https://") && !text.startsWith("http://")){
 		    text = "http://" + text;
@@ -49,6 +38,7 @@ public class MomentDisplayer {
 		return true;
 	}
 	
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	private static boolean showImageMoment(Activity activity, String img) {
 	    /*// Get the layout inflater
 	    LayoutInflater inflater = activity.getLayoutInflater();
@@ -57,8 +47,9 @@ public class MomentDisplayer {
 	    
 	    // Get screen size
 	 	Display display = activity.getWindowManager().getDefaultDisplay();
-	 	Point size = new Point();
-	 	display.getSize(size);
+	 	Point size;
+		size = new Point();
+		display.getSize(size);
 	 	int screenWidth = size.x;
 	 	int screenHeight = size.y;
 	 	
