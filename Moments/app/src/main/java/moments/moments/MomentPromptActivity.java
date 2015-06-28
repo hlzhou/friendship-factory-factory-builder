@@ -94,7 +94,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         	if(resultCode == RESULT_OK && data != null) {
         		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
-        		MomentDisplayer.showMoment(this, new Data(Type.IMAGE, selectedImage.toString()));
+                onImageSubmit();
                 createNote(Type.IMAGE, selectedImage.toString());
         	}
         	break;
@@ -102,6 +102,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         	if(resultCode == RESULT_OK && data != null) {
         		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
+                onImageSubmit();
         	}
         	break;
         }
@@ -113,6 +114,10 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
     public void showMomentCapturedToast() {
         Toast.makeText(this, getString(R.string.inserted), Toast.LENGTH_SHORT).show();
+    }
+    
+    public void onImageSubmit() {
+    	
     }
     
     public void createNote(Type type, String text) {
