@@ -78,7 +78,7 @@ public class MainActivity extends MomentPromptActivity {
         MomentDisplayer.showMoment(this, getNote());
     }
 
-    public void openSettings() {
+    public void openSettings(View view) {
         Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(settings);
     }

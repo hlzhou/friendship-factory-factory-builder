@@ -69,6 +69,6 @@ public class QuestionManager {
             return prompt != null;
         }
     }
-
+    
 
 }
