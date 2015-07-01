@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +33,12 @@ public class MainActivity extends MomentPromptActivity {
         
         shakeNoise = MediaPlayer.create(this, R.raw.shake);
         ripNoise = MediaPlayer.create(this, R.raw.paperripping);
+        testNotification();
+    }
+
+    private void testNotification() {
+        Intent intent = new Intent(this, NotificationService.class);
+        startService(intent);
     }
 
     public void addText(View view) {
