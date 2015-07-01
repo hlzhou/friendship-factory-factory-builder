@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <SwitchPreference
+        android:id="@+id/notification_switch"
         android:key="notifications"
         android:summary="Enable or disable push notifications."
         android:title="Enable notifications"
