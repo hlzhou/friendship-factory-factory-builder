@@ -1,7 +1,9 @@
 package moments.moments;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -18,6 +20,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 import fffb.moments.app.TextInputDialog;
 import fffb.moments.app.LinkInputDialog;
 
@@ -33,12 +37,7 @@ public class MainActivity extends MomentPromptActivity {
         
         shakeNoise = MediaPlayer.create(this, R.raw.shake);
         ripNoise = MediaPlayer.create(this, R.raw.paperripping);
-        testNotification();
-    }
-
-    private void testNotification() {
-        Intent intent = new Intent(this, NotificationService.class);
-        startService(intent);
+        HappyNotificationManager.startDailyNotification(getApplicationContext());
     }
 
     public void addText(View view) {
