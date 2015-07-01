@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
@@ -13,7 +14,7 @@ public class QuestionManager {
     private static Map<String, String> questionsPromptMap;
     private static List<String> questions;
 
-    private class EasyStringGetter {
+    private static class EasyStringGetter {
         private Context context;
 
         public EasyStringGetter(Context context) {
@@ -25,7 +26,7 @@ public class QuestionManager {
         }
     }
 
-    public void setUpQuestionManager(Context context) {
+    public static void setUpQuestionManager(Context context) {
         if(isSetUp()) {
             return;
         }
@@ -37,11 +38,11 @@ public class QuestionManager {
                 .build();
     }
 
-    public boolean isSetUp() {
+    public static boolean isSetUp() {
         return questionsPromptMap != null && questions != null;
     }
 
-    private class MomentQuestion {
+    private static class MomentQuestion {
         private String question;
         private String prompt;
 
@@ -69,6 +70,13 @@ public class QuestionManager {
             return prompt != null;
         }
     }
-    
+
+    public static MomentQuestion getRandomQuestion() {
+        if (!isSetUp()) {
+            throw new IllegalStateException("MomentQuestion has not yet been set up.");
+        }
+        String question = questions.get(new Random().nextInt(questions.size()));
+        return new MomentQuestion(question, questionsPromptMap.get(question));
+    }
 
 }
