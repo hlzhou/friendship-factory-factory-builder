@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.Set;
 
@@ -25,9 +26,11 @@ public class SettingsActivity extends Activity implements SharedPreferences.OnSh
                                           String key) {
         if (key.equals(NOTIFICATION_STATE)) {
             if (sharedPreferences.getBoolean(key, true)) {
+                Log.d("switch is on", "true");
                 HappyNotificationManager.startDailyNotification(SettingsActivity.this);
             }
             else {
+                Log.d("switch is on", "false");
                 HappyNotificationManager.stopDailyNotification(SettingsActivity.this);
             }
         }
