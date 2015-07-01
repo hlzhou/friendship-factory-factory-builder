@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 /**
- * Created by Eden on 6/29/2015.
+ *
  */
 public class NotificationService extends Service {
     /**

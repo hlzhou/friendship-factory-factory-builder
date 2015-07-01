@@ -4,7 +4,6 @@
     <string name="app_name">Moments</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="what_makes_happy">What makes you happy? :)</string>
     <string name="submit">Into the Jar!</string>
     <string name="cancel">Nevermind.</string>
     <string name="prompt_link">Give me a great link!</string>
@@ -14,5 +13,13 @@
         <item >Camera</item>
         <item >Gallery</item>
     </string-array>
+
+    <string name="what_makes_happy">What makes you happy? :)</string>
+    <string name="what_joke">What's a good joke?</string>
+    <string name="how_day">How was your day today?</string>
+    <string name="how_day_prompt">Today...</string>
+    <string name="what_listen">What are you listening to right now?</string>
+    <string name="what_listen_prompt">I'm listening to...</string>
+    <string name="what_said_happy">What has somebody told you that made you happy?</string>
 
 </resources>
