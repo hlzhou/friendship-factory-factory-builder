@@ -25,10 +25,10 @@ public class SettingsActivity extends Activity implements SharedPreferences.OnSh
                                           String key) {
         if (key.equals(NOTIFICATION_STATE)) {
             if (sharedPreferences.getBoolean(key, true)) {
-                HappyNotificationManager.startDailyNotification(SettingsActivity.this);
+                HappyNotificationManager.startDailyNotification(getApplicationContext());
             }
             else {
-                HappyNotificationManager.stopDailyNotification(SettingsActivity.this);
+                HappyNotificationManager.stopDailyNotification(getApplicationContext());
             }
         }
     }

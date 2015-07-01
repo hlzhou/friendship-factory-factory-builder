@@ -9,6 +9,8 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import moments.moments.QuestionManager.MomentQuestion;
+
 /**
  *
  */
@@ -60,7 +62,9 @@ public class NotificationService extends Service {
         // This is the icon to use on the notification
         int icon = R.drawable.jar;
         // This is the scrolling text of the notification
-        CharSequence text = getString(R.string.what_makes_happy);
+        MomentQuestion question = QuestionManager.getRandomQuestion(getApplicationContext());
+        CharSequence text = question.getQuestion();
+
         // What time to show on the notification
         long time = System.currentTimeMillis();
 

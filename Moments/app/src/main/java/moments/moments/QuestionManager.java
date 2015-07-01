@@ -1,6 +1,7 @@
 package moments.moments;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.AbstractMap;
 import java.util.List;
@@ -42,7 +43,7 @@ public class QuestionManager {
         return questionsPromptMap != null && questions != null;
     }
 
-    private static class MomentQuestion {
+    public static class MomentQuestion {
         private String question;
         private String prompt;
 
@@ -71,11 +72,22 @@ public class QuestionManager {
         }
     }
 
-    public static MomentQuestion getRandomQuestion() {
-        if (!isSetUp()) {
-            throw new IllegalStateException("MomentQuestion has not yet been set up.");
+    public static boolean isQuestionAppropriate(String question, Context context) {
+        if (question.equals(context.getString(R.string.what_listen))) {
+            return true;
         }
-        String question = questions.get(new Random().nextInt(questions.size()));
+        return true;
+    }
+
+    public static MomentQuestion getRandomQuestion(Context context) {
+        if (!isSetUp()) {
+            setUpQuestionManager(context);
+        }
+        String question;
+        do{
+            question = questions.get(new Random().nextInt(questions.size()));
+        } while(!isQuestionAppropriate(question, context));
+        Log.d("QuestionManager", "question: " + question);
         return new MomentQuestion(question, questionsPromptMap.get(question));
     }
 
