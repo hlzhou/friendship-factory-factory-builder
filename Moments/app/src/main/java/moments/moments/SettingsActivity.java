@@ -1,28 +1,16 @@
 package moments.moments;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.preference.PreferenceActivity;
-import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
-import fffb.moments.app.TextInputDialog;
-import fffb.moments.app.LinkInputDialog;
+import java.util.Set;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    //if id, then notification_switch
+    public static final String NOTIFICATION_STATE = "notifications";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +19,17 @@ public class SettingsActivity extends Activity {
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new SettingsFragment())
                 .commit();
+    }
+
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+                                          String key) {
+        if (key.equals(NOTIFICATION_STATE)) {
+            if (sharedPreferences.getBoolean(key, true)) {
+                HappyNotificationManager.startDailyNotification(SettingsActivity.this);
+            }
+            else {
+                HappyNotificationManager.stopDailyNotification(SettingsActivity.this);
+            }
+        }
     }
 }
