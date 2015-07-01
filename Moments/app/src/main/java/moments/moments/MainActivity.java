@@ -78,7 +78,12 @@ public class MainActivity extends MomentPromptActivity {
     	playOpenJarNoise();
         MomentDisplayer.showMoment(this, getNote());
     }
-    
+
+    public void openSettings() {
+        Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(settings);
+    }
+
     public void playInsertNoise() {
     	ripNoise.start();
     }
