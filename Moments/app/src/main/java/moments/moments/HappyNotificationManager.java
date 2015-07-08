@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 /**
  *
@@ -38,6 +39,7 @@ public class HappyNotificationManager extends BroadcastReceiver{
         pm.setComponentEnabledSetting(receiver,
                 PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                 PackageManager.DONT_KILL_APP);
+        Log.d("notification state", "start");
     }
 
     public static void stopDailyNotification(Context context) {
@@ -53,6 +55,7 @@ public class HappyNotificationManager extends BroadcastReceiver{
         pm.setComponentEnabledSetting(receiver,
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP);
+        Log.d("notification state", "stop");
     }
 
 

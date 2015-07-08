@@ -1,6 +1,7 @@
 package moments.moments;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.util.Log;
 
 import java.util.AbstractMap;
@@ -74,7 +75,11 @@ public class QuestionManager {
 
     public static boolean isQuestionAppropriate(String question, Context context) {
         if (question.equals(context.getString(R.string.what_listen))) {
-            return true;
+            AudioManager manager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+            if(manager.isMusicActive()){
+                return true;
+            }
+            return false;
         }
         return true;
     }
