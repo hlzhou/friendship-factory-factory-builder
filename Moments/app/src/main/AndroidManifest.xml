@@ -42,7 +42,8 @@
         <activity android:name=".WLinkAddActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
-        <activity android:name=".WTakeActivity"></activity>
+        <activity android:name=".WTakeActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
         <activity android:name=".SettingsActivity"></activity>
 

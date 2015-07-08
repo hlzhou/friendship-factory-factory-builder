@@ -12,11 +12,11 @@ import android.view.MenuItem;
 /**
  * Created by hzhou1235 on 6/27/15.
  */
-public class WTextAddActivity extends MomentPromptActivity {
+public class WTextAddActivity extends MomentPromptWidgetActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_TEXT_ADD");
-        super.showPrompt(Type.TEXT, true);
+        super.showPrompt(Type.TEXT);
     }
 }

@@ -7,14 +7,18 @@ import android.util.Log;
 /**
  * Created by hzhou1235 on 6/27/15.
  */
-public class WTakeActivity extends MomentPromptActivity{
+public class WTakeActivity extends MomentPromptWidgetActivity implements JarDismissListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "DISPLAY MOMENT");
         //setContentView(R.layout.appwidget_jar);
-        MomentDisplayer.showMoment(this, getNote());
-        finish();
+        MomentDisplayer.showMoment(this, getNote(), this);
+    }
 
+    @Override
+    public void onJarOpenDismiss() {
+        finish();
+        System.exit(0);
     }
 }
