@@ -4,16 +4,13 @@
     <facet type="java-gradle" name="Java-Gradle">
       <configuration>
         <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/build" />
+        <option name="BUILDABLE" value="false" />
       </configuration>
     </facet>
   </component>
-<<<<<<< HEAD
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/test" />
-=======
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
->>>>>>> 38047f78294faba0c012958487b4bcd773e9ad72
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
@@ -22,4 +19,3 @@
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
-

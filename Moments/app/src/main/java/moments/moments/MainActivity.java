@@ -15,8 +15,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -34,7 +36,24 @@ public class MainActivity extends MomentPromptActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        final ImageButton addText = (ImageButton)findViewById(R.id.add_text);
+
+        ImageButton addImage = (ImageButton)findViewById(R.id.add_image);
+        addImage.setMinimumHeight(addImage.getMeasuredWidth());
+        ImageButton addLink = (ImageButton)findViewById(R.id.add_link);
+        addLink.setMinimumHeight(addLink.getMeasuredWidth());
+
+        if(addText.getViewTreeObserver().isAlive()){
+            addText.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    addText.setMinimumHeight(addText.getMeasuredWidth());
+                    //addText.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                }
+            });
+        }
+
         shakeNoise = MediaPlayer.create(this, R.raw.shake);
         ripNoise = MediaPlayer.create(this, R.raw.paperripping);
         HappyNotificationManager.startDailyNotification(getApplicationContext());
