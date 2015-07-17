@@ -9,17 +9,33 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import moments.moments.R;
 import moments.moments.Type;
 
 public class TextInputDialog extends DialogFragment{
+
+	public static String PROMPT_KEY = "prompt";
 	
 	public interface TextSubmitter {
 		public void submitText(String string);
 	}
 	
 	private TextSubmitter mTextSubmitter;
+
+	private String prompt;
+	private EditText text;
+
+	public static TextInputDialog newInstance(String prompt) {
+		TextInputDialog textInputDialog = new TextInputDialog();
+
+		Bundle args = new Bundle();
+		args.putString(PROMPT_KEY, prompt);
+		textInputDialog.setArguments(args);
+
+		return textInputDialog;
+	}
 	
 	@Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,6 +46,10 @@ public class TextInputDialog extends DialogFragment{
 	    // Inflate and set the layout for the dialog
 	    // Pass null as the parent view because its going in the dialog layout
 	    final View view = inflater.inflate(R.layout.text_input_dialog, null);
+		text = (EditText) view.findViewById(R.id.text);
+		if (prompt != null) {
+			text.setHint(prompt);
+		}
 	    builder.setView(view)
 	    // Add action buttons
 	           .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {

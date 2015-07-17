@@ -22,7 +22,12 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 
     public static final int RESULT_LOAD_IMAGE = 1;
     public static final int RESULT_TAKE_IMAGE = 2;
-    
+
+    public void showTextWithPrompt(String prompt) {
+        TextInputDialog textInputDialog = TextInputDialog.newInstance(prompt);
+        textInputDialog.show(getFragmentManager(), "textInput");
+    }
+
 	public void showPrompt(Type type) {
         switch(type){
 		case TEXT:
