@@ -27,12 +27,12 @@ public class HappyNotificationManager extends BroadcastReceiver{
         }
         PendingIntent pendingIntent = getNotifiationPendingIntent(context);
         AlarmManager alarmMgr = getAlarmManager(context);
-       alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+       /*alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 AlarmManager.INTERVAL_HALF_DAY,
-                AlarmManager.INTERVAL_DAY, pendingIntent);
-        /*alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                AlarmManager.INTERVAL_DAY, pendingIntent);*/
+        alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 2000,
-                2000, pendingIntent);*/
+                2000, pendingIntent);
         ComponentName receiver = new ComponentName(context, HappyNotificationManager.class);
         PackageManager pm = context.getPackageManager();
 

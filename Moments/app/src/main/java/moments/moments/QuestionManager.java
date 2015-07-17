@@ -16,6 +16,8 @@ public class QuestionManager {
     private static Map<String, String> questionsPromptMap;
     private static List<String> questions;
 
+    private static String APPEND_TO_BEGINNING_FLAG = "... ";
+
     private static class EasyStringGetter {
         private Context context;
 
@@ -35,8 +37,8 @@ public class QuestionManager {
         questions = ImmutableList.copyOf(context.getResources().getStringArray(R.array.questions));
         EasyStringGetter esg = new EasyStringGetter(context);
         questionsPromptMap = ImmutableMap.<String, String>builder()
-                .put(esg.get(R.string.how_day), esg.get(R.string.how_day_prompt))
-                .put(esg.get(R.string.what_listen), esg.get(R.string.what_listen_prompt))
+                .put(esg.get(R.string.how_day), esg.get(R.string.how_day_prompt) + APPEND_TO_BEGINNING_FLAG)
+                .put(esg.get(R.string.what_listen), esg.get(R.string.what_listen_prompt) + APPEND_TO_BEGINNING_FLAG)
                 .build();
     }
 
@@ -52,7 +54,7 @@ public class QuestionManager {
             this(question, null);
         }
 
-        public MomentQuestion(String question, String propmt) {
+        public MomentQuestion(String question, String prompt) {
             this.question = question;
             this.prompt = prompt;
         }
@@ -71,6 +73,10 @@ public class QuestionManager {
         public boolean doAppendPrompt() {
             return prompt != null;
         }
+    }
+
+    public static boolean doAppendToBeginning(String prompt) {
+        return prompt.contains(APPEND_TO_BEGINNING_FLAG);
     }
 
     public static boolean isQuestionAppropriate(String question, Context context) {

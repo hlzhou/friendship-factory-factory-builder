@@ -17,9 +17,9 @@
     <string name="what_makes_happy">What makes you happy? :)</string>
     <string name="what_joke">What\'s a good joke?</string>
     <string name="how_day">How was your day today?</string>
-    <string name="how_day_prompt">Today...</string>
+    <string name="how_day_prompt">Today</string>
     <string name="what_listen">What are you listening to right now?</string>
-    <string name="what_listen_prompt">I\'m listening to...</string>
+    <string name="what_listen_prompt">I\'m listening to</string>
     <string name="what_said_happy">What has somebody told you that made you happy?</string>
 
     <string-array name="questions">

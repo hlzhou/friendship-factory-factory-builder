@@ -9,6 +9,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import fffb.moments.app.TextInputDialog;
 import moments.moments.QuestionManager.MomentQuestion;
 
 /**
@@ -70,8 +71,11 @@ public class NotificationService extends Service {
 
         Notification notification = new Notification(icon, text, time);
 
+        Intent addTextActivityIntent =  new Intent(this, WTextAddActivity.class);
+        addTextActivityIntent.putExtra(TextInputDialog.PROMPT_KEY, question.getPrompt());
+
         // The PendingIntent to launch our activity if the user selects this notification
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, addTextActivityIntent, 0);
 
         // Set the info for the views that show in the notification panel.
         notification.setLatestEventInfo(this, title, text, contentIntent);
