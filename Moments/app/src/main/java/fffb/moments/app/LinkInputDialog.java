@@ -58,4 +58,13 @@ public class LinkInputDialog extends DialogFragment{
                     + " must implement LinkSubmitter");
         }
 	}
+
+	@Override
+	public void onDismiss(final DialogInterface dialog) {
+		super.onDismiss(dialog);
+		final Activity activity = getActivity();
+		if (activity instanceof DialogInterface.OnDismissListener) {
+			((DialogInterface.OnDismissListener) activity).onDismiss(dialog);
+		}
+	}
 }

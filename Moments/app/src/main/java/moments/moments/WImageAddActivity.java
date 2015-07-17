@@ -12,11 +12,11 @@ import android.util.Log;
 /**
  * Created by hzhou1235 on 6/27/15.
  */
-public class WImageAddActivity extends MomentPromptActivity {
+public class WImageAddActivity extends MomentPromptWidgetActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_IMAGE_ADD");
-        super.showPrompt(Type.IMAGE, true);
+        super.showPrompt(Type.IMAGE);
     }
 }

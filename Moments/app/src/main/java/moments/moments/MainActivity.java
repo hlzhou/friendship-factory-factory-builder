@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -60,15 +59,15 @@ public class MainActivity extends MomentPromptActivity {
     }
 
     public void addText(View view) {
-    	showPrompt(Type.TEXT, false);
+    	showPrompt(Type.TEXT);
     }
 
     public void addImage(View view) {
-    	showPrompt(Type.IMAGE, false);
+    	showPrompt(Type.IMAGE);
     }
     
     public void addLink(View view) {
-    	showPrompt(Type.LINK, false);
+    	showPrompt(Type.LINK);
     }
     
     @Override
@@ -84,7 +83,7 @@ public class MainActivity extends MomentPromptActivity {
     }
     
     @Override
-    public void onImageSubmit() {
+    protected void onImageSubmit() {
     	super.onImageSubmit();
     	playInsertNoise();
     }
