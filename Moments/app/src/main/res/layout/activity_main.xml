@@ -24,11 +24,12 @@
                 android:layout_height="match_parent"
                 android:id="@+id/add_text"
                 android:src="@drawable/ic_add_black_24dp"
+                android:scaleType="fitCenter"
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/add_image"
                 android:layout_weight="1"
                 android:onClick="addText"
-                android:padding="10dp"
+                android:padding="45dp"
                 android:background="@drawable/roundedrectangle"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
@@ -38,11 +39,12 @@
                 android:layout_height="match_parent"
                 android:id="@+id/add_image"
                 android:src="@drawable/ic_photo_camera_black_24dp"
+                android:scaleType="fitCenter"
                 android:layout_centerHorizontal="true"
-                android:padding="10dp"
+                android:padding="45dp"
+                android:background="@drawable/roundedrectangle"
                 android:layout_weight="1"
                 android:onClick="addImage"
-                android:background="@drawable/roundedrectangle"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
 
@@ -51,11 +53,12 @@
                 android:layout_height="match_parent"
                 android:id="@+id/add_link"
                 android:src="@drawable/ic_insert_link_black_24dp"
+                android:scaleType="fitCenter"
                 android:layout_alignTop="@+id/add_image"
                 android:layout_toRightOf="@+id/add_image"
                 android:layout_weight="1"
                 android:onClick="addLink"
-                android:padding="10dp"
+                android:padding="45dp"
                 android:background="@drawable/roundedrectangle"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
@@ -81,8 +84,8 @@
             android:id="@+id/jar"
             android:onClick="openJar"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:src="@drawable/jarweb"
-            android:layout_weight="1"/>
+            android:src="@drawable/newjar"
+            android:layout_weight="1" />
 
         <ImageButton
             android:src="@drawable/ic_settings_black_24dp"
