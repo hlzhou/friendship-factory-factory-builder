@@ -89,8 +89,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical|right"
-            android:background="@drawable/roundedrectangle"
-            android:onClick="openSettings"/>
+            android:background="@drawable/settingsbutton"
+            android:onClick="openSettings"
+            android:layout_margin="10dp"
+            android:id="@+id/settingsbutton" />
 
 
 
