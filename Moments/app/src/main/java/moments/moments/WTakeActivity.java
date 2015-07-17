@@ -18,6 +18,7 @@ public class WTakeActivity extends MomentPromptWidgetActivity implements JarDism
 
     @Override
     public void onJarOpenDismiss() {
+        Log.d("HELEN", "ON JAR OPEN DISMISS");
         finish();
         System.exit(0);
     }
