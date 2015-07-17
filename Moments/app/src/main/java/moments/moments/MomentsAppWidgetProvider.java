@@ -35,10 +35,11 @@ public class MomentsAppWidgetProvider extends AppWidgetProvider {
 
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget); //TODO: the layout might be something else
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget);
             views.setOnClickPendingIntent(R.id.add_text, pendingTextIntent);
             views.setOnClickPendingIntent(R.id.add_image, pendingImageIntent);
             views.setOnClickPendingIntent(R.id.add_link, pendingLinkIntent);
+            Log.d("WIDGET FUN", "PENDING INTENTS SET");
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +17,7 @@ import fffb.moments.app.TextInputDialog;
  */
 public class WTextAddActivity extends MomentPromptWidgetActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //TODO: move somewhere else? seems to only work after restarting launcher...
         super.onCreate(savedInstanceState);
         Log.d("HELEN", "W_TEXT_ADD");
 
@@ -29,4 +28,5 @@ public class WTextAddActivity extends MomentPromptWidgetActivity {
             super.showPrompt(Type.TEXT);
         }
     }
+
 }
