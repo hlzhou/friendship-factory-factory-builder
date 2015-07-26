@@ -9,7 +9,7 @@
     android:minResizeHeight="30dp"
     android:minResizeWidth="80dp"
     android:updatePeriodMillis="2000"
-    android:previewImage="@drawable/smiley_icon"
+    android:previewImage="@drawable/add_widget_preview"
     android:initialLayout="@layout/appwidget"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
