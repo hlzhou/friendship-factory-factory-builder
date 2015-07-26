@@ -75,7 +75,7 @@ public class NotificationService extends Service {
         addTextActivityIntent.putExtra(TextInputDialog.PROMPT_KEY, question.getPrompt());
 
         // The PendingIntent to launch our activity if the user selects this notification
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, addTextActivityIntent, 0);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, addTextActivityIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         // Set the info for the views that show in the notification panel.
         notification.setLatestEventInfo(this, title, text, contentIntent);

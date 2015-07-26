@@ -6,15 +6,18 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import moments.moments.QuestionManager;
 import moments.moments.R;
 import moments.moments.Type;
 
 public class TextInputDialog extends DialogFragment{
+	public static String TAG = "TextInputDialog";
 
 	public static String PROMPT_KEY = "prompt";
 	
@@ -28,6 +31,7 @@ public class TextInputDialog extends DialogFragment{
 	private EditText text;
 
 	public static TextInputDialog newInstance(String prompt) {
+		Log.d(TAG, "Creating new instance");
 		TextInputDialog textInputDialog = new TextInputDialog();
 
 		Bundle args = new Bundle();
@@ -39,9 +43,13 @@ public class TextInputDialog extends DialogFragment{
 	
 	@Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+		Log.d(TAG, "Creating dialog");
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	    // Get the layout inflater
 	    LayoutInflater inflater = getActivity().getLayoutInflater();
+
+		prompt = getArguments().getString(PROMPT_KEY);
+		Log.d(TAG, "Has prompt: " + prompt);
 
 	    // Inflate and set the layout for the dialog
 	    // Pass null as the parent view because its going in the dialog layout
@@ -56,16 +64,26 @@ public class TextInputDialog extends DialogFragment{
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
 	                   EditText happyText = (EditText) view.findViewById(R.id.text);
-	            	   mTextSubmitter.submitText(happyText.getText().toString());
+					   String textToSubmit = happyText.getText().toString();
+					   if (QuestionManager.doAppendToBeginning(prompt)) {
+						   textToSubmit = prompt + textToSubmit;
+					   }
+	            	   mTextSubmitter.submitText(textToSubmit);
 	               }
 	           })
-	           .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-	               public void onClick(DialogInterface dialog, int id) {
-	                   TextInputDialog.this.getDialog().cancel();
-	               }
+				.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						TextInputDialog.this.getDialog().cancel();
+					}
 	           });      
 	    return builder.create();
     }
+
+	public void setPromptStringIfDialogCalled(String prompt) {
+		if (text != null) {
+			text.setHint(prompt);
+		}
+	}
 	
 	@Override
 	public void onAttach(Activity activity) {

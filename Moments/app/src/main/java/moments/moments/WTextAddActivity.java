@@ -16,6 +16,8 @@ import fffb.moments.app.TextInputDialog;
  * Created by hzhou1235 on 6/27/15.
  */
 public class WTextAddActivity extends MomentPromptWidgetActivity {
+    public static final String TAG = "WTextAddActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { //TODO: move somewhere else? seems to only work after restarting launcher...
         super.onCreate(savedInstanceState);
@@ -23,8 +25,11 @@ public class WTextAddActivity extends MomentPromptWidgetActivity {
 
         Intent intent = getIntent();
         if (intent.hasExtra(TextInputDialog.PROMPT_KEY)) {
-            super.showTextWithPrompt(intent.getExtras().getString(TextInputDialog.PROMPT_KEY));
+            String prompt = intent.getExtras().getString(TextInputDialog.PROMPT_KEY);
+            Log.d(TAG, "Has extra - putting in " + prompt);
+            super.showTextWithPrompt(prompt);
         } else {
+            Log.d(TAG, "No prompt, showing default.");
             super.showPrompt(Type.TEXT);
         }
     }
