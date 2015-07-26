@@ -13,6 +13,7 @@ import android.widget.RemoteViews;
  */
 public class MomentsAppWidgetProvider extends AppWidgetProvider {
 
+    @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
@@ -47,7 +48,12 @@ public class MomentsAppWidgetProvider extends AppWidgetProvider {
         }
     }
 
-    public void onReceive(){
+    @Override
+    public void onReceive(Context context, Intent intent){
+        // Chain up to the super class so the onEnabled, etc callbacks get dispatched
+        super.onReceive(context, intent);
+        // Handle a different Intent
+        Log.d("HELEN", "onReceive()" + intent.getAction());
 
     }
 
