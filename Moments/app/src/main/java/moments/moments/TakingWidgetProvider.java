@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import fffb.moments.app.TextInputDialog;
+
 /**
  * Created by hzhou1235 on 6/27/15.
  */

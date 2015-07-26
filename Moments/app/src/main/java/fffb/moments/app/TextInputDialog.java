@@ -48,8 +48,13 @@ public class TextInputDialog extends DialogFragment{
 	    // Get the layout inflater
 	    LayoutInflater inflater = getActivity().getLayoutInflater();
 
-		prompt = getArguments().getString(PROMPT_KEY);
-		Log.d(TAG, "Has prompt: " + prompt);
+		try {
+			prompt = getArguments().getString(PROMPT_KEY);
+			Log.d(TAG, "Has prompt: " + prompt);
+		} catch(NullPointerException e){
+			prompt = null;
+		}
+
 
 	    // Inflate and set the layout for the dialog
 	    // Pass null as the parent view because its going in the dialog layout
