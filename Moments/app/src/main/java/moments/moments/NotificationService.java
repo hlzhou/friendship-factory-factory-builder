@@ -71,7 +71,7 @@ public class NotificationService extends Service {
 
         Notification notification = new Notification(icon, text, time);
 
-        Intent addTextActivityIntent =  new Intent(this, WTextAddActivity.class);
+        Intent addTextActivityIntent =  new Intent(this, NTextAddActivity.class);
         addTextActivityIntent.putExtra(TextInputDialog.PROMPT_KEY, question.getPrompt());
 
         // The PendingIntent to launch our activity if the user selects this notification
