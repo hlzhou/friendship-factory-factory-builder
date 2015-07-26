@@ -76,6 +76,9 @@ public class QuestionManager {
     }
 
     public static boolean doAppendToBeginning(String prompt) {
+        if (prompt == null) {
+            return false;
+        }
         return prompt.contains(APPEND_TO_BEGINNING_FLAG);
     }
 
