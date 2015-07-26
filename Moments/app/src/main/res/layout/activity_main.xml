@@ -23,25 +23,22 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/add_text"
-                android:src="@drawable/ic_add_black_24dp"
-                android:scaleType="fitCenter"
+                android:src="@drawable/ic_add_black_48dp"
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/add_image"
                 android:layout_weight="1"
                 android:onClick="addText"
-                android:padding="45dp"
                 android:background="@drawable/roundedrectangle"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
+
 
             <ImageButton
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/add_image"
-                android:src="@drawable/ic_photo_camera_black_24dp"
-                android:scaleType="fitCenter"
+                android:src="@drawable/ic_camera_alt_black_48dp"
                 android:layout_centerHorizontal="true"
-                android:padding="45dp"
                 android:background="@drawable/roundedrectangle"
                 android:layout_weight="1"
                 android:onClick="addImage"
@@ -49,16 +46,14 @@
                 android:layout_marginRight="5dp" />
 
             <ImageButton
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/add_link"
-                android:src="@drawable/ic_insert_link_black_24dp"
-                android:scaleType="fitCenter"
+                android:src="@drawable/ic_link_black_48dp"
                 android:layout_alignTop="@+id/add_image"
                 android:layout_toRightOf="@+id/add_image"
                 android:layout_weight="1"
                 android:onClick="addLink"
-                android:padding="45dp"
                 android:background="@drawable/roundedrectangle"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
