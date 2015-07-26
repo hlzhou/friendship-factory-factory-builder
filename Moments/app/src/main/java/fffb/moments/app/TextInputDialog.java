@@ -19,7 +19,7 @@ import moments.moments.Type;
 public class TextInputDialog extends DialogFragment{
 	public static String TAG = "TextInputDialog";
 
-	public static String PROMPT_KEY = "prompt";
+	public static String PROMPT_KEY = "PROMPT_KEY_TEXTINPUTDIALOG";
 	
 	public interface TextSubmitter {
 		public void submitText(String string);
