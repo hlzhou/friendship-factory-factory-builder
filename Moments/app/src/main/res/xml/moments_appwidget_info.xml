@@ -11,7 +11,6 @@
     android:updatePeriodMillis="2000"
     android:previewImage="@drawable/smiley_icon"
     android:initialLayout="@layout/appwidget"
-    android:configure="moments.moments.AppWidgetConfigureActivity"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
 
