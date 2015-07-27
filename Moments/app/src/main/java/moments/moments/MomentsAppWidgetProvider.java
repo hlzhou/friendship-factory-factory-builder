@@ -40,7 +40,6 @@ public class MomentsAppWidgetProvider extends AppWidgetProvider {
             views.setOnClickPendingIntent(R.id.add_text, pendingTextIntent);
             views.setOnClickPendingIntent(R.id.add_image, pendingImageIntent);
             views.setOnClickPendingIntent(R.id.add_link, pendingLinkIntent);
-            Log.d("WIDGET FUN", "PENDING INTENTS SET");
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -52,9 +51,6 @@ public class MomentsAppWidgetProvider extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent){
         // Chain up to the super class so the onEnabled, etc callbacks get dispatched
         super.onReceive(context, intent);
-        // Handle a different Intent
-        Log.d("HELEN", "onReceive()" + intent.getAction());
-
     }
 
 }

@@ -1,8 +1,5 @@
 package moments.moments;
 
-import moments.moments.DataDbAdapter;
-import moments.moments.Type;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.Toast;
-import moments.moments.MomentDisplayer;
 import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
