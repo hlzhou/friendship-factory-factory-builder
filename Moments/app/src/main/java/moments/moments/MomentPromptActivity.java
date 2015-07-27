@@ -11,12 +11,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Toast;
 import moments.moments.MomentDisplayer;
 import fffb.moments.app.LinkInputDialog;
 import fffb.moments.app.TextInputDialog;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter, DialogInterface.OnDismissListener{
+    private static final String TAG = "MomentPromptActivity";
 	public int mDataNumber = 1;
     public DataDbAdapter mDbHelper;
 
@@ -103,7 +105,10 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         super.onActivityResult(requestCode, resultCode, data);
         switch(requestCode) {
         case RESULT_LOAD_IMAGE:
+            Log.d(TAG, "On Activity Result - RESULT_LOAD_IMAGE");
+            Log.d(TAG, "data: " + data);
         	if(resultCode == RESULT_OK && data != null) {
+                Log.d(TAG, "Proceeding with submiting image");
         		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
                 onImageSubmit();
