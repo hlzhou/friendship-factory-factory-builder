@@ -106,9 +106,9 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         	if(resultCode == RESULT_OK && data != null) {
         		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
-                onImageSubmit();
                 createNote(Type.IMAGE, selectedImage.toString());
-        	}else {
+                onImageSubmit();
+            }else {
                 onDismiss(null);
             }
         	break;
