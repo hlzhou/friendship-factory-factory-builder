@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -15,7 +16,9 @@ import android.provider.MediaStore;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.IOException;
 
@@ -47,15 +50,21 @@ public class MomentDisplayer {
 		builder.setMessage(text);
     	AlertDialog dialog = builder.create();
 		dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			@Override
-			public void onDismiss(DialogInterface dialogInterface) {
-				if(jarDismissListener != null) {
-					jarDismissListener.onJarOpenDismiss();
-				}
-			}
-		});
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                if (jarDismissListener != null) {
+                    jarDismissListener.onJarOpenDismiss();
+                }
+            }
+        });
+
 		dialog.show();
-		return true;
+
+        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+        Typeface ralewayFont = Typeface.createFromAsset(activity.getApplicationContext().getAssets(), "fonts/raleway_italics.ttf");
+        textView.setTypeface(ralewayFont);
+
+        return true;
 	}
 
 	private static boolean showLinkMoment(Activity activity, String text) {

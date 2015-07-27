@@ -5,10 +5,12 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -80,8 +82,25 @@ public class TextInputDialog extends DialogFragment{
 					public void onClick(DialogInterface dialog, int id) {
 						TextInputDialog.this.getDialog().cancel();
 					}
-	           });      
-	    return builder.create();
+	           });
+
+		AlertDialog dialog = builder.create();
+
+		final Typeface ralewayFont = Typeface.createFromAsset(view.getContext().getAssets(), "fonts/raleway.ttf");
+
+		dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+			@Override
+			public void onShow(DialogInterface dialog) {                    //
+				Button positiveButton = ((AlertDialog) dialog)
+						.getButton(AlertDialog.BUTTON_POSITIVE);
+				positiveButton.setTypeface(ralewayFont);
+
+				Button negativeButton = ((AlertDialog) dialog)
+						.getButton(AlertDialog.BUTTON_NEGATIVE);
+				negativeButton.setTypeface(ralewayFont);
+			}
+		});
+		return dialog;
     }
 
 	public void setPromptStringIfDialogCalled(String prompt) {
