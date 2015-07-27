@@ -101,7 +101,6 @@ public class QuestionManager {
         do{
             question = questions.get(new Random().nextInt(questions.size()));
         } while(!isQuestionAppropriate(question, context));
-        Log.d("QuestionManager", "question: " + question);
         return new MomentQuestion(question, questionsPromptMap.get(question));
     }
 
