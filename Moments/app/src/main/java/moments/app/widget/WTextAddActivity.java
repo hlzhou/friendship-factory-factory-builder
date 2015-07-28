@@ -9,7 +9,7 @@ import moments.app.Type;
 public class WTextAddActivity extends MomentPromptWidgetActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { //TODO: move somewhere else? seems to only work after restarting launcher...
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
