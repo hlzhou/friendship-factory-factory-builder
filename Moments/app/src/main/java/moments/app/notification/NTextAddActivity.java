@@ -7,6 +7,10 @@ import moments.app.widget.MomentPromptWidgetActivity;
 import moments.app.TextInputDialog;
 import moments.app.Type;
 
+/**
+ * NTextAddActivity presents a dialog from which text can be added to the jar from
+ * taps on the notification.
+ */
 public class NTextAddActivity extends MomentPromptWidgetActivity {
 
     @Override

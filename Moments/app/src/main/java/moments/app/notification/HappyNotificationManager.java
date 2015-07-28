@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-public class HappyNotificationManager extends BroadcastReceiver{
+/**
+ *
+ */
+public class HappyNotificationManager extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -22,7 +25,7 @@ public class HappyNotificationManager extends BroadcastReceiver{
         if(isDailyNotificationStarted(context)) {
             return;
         }
-        PendingIntent pendingIntent = getNotifiationPendingIntent(context);
+        PendingIntent pendingIntent = getNotificationPendingIntent(context);
         AlarmManager alarmMgr = getAlarmManager(context);
         alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 AlarmManager.INTERVAL_HALF_DAY,
@@ -38,7 +41,7 @@ public class HappyNotificationManager extends BroadcastReceiver{
 
     public static void stopDailyNotification(Context context) {
         if (isDailyNotificationStarted(context)) {
-            PendingIntent pendingIntent = getNotifiationPendingIntent(context);
+            PendingIntent pendingIntent = getNotificationPendingIntent(context);
             AlarmManager alarmMgr = getAlarmManager(context);
             alarmMgr.cancel(pendingIntent);
             pendingIntent.cancel();
@@ -62,7 +65,12 @@ public class HappyNotificationManager extends BroadcastReceiver{
         return (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
     }
 
-    private static PendingIntent getNotifiationPendingIntent(Context context) {
+    /**
+     *
+     * @param context
+     * @return the PendingIntent used to launch a notification
+     */
+    private static PendingIntent getNotificationPendingIntent(Context context) {
         Intent intent = getNotificationIntent(context);
         return PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }

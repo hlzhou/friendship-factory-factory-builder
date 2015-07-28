@@ -14,10 +14,11 @@ import moments.app.QuestionManager.MomentQuestion;
 import moments.app.R;
 import moments.app.TextInputDialog;
 
+/**
+ * Launches notifications prompting users to add text to the jar.
+ */
 public class NotificationService extends Service {
-    /**
-     * Class for clients to access
-     */
+
     public class ServiceBinder extends Binder {
         NotificationService getService() {
             return NotificationService.this;
@@ -48,16 +49,11 @@ public class NotificationService extends Service {
         return mBinder;
     }
 
-    // This is the object that receives interactions from clients
     private final IBinder mBinder = new ServiceBinder();
 
-    /**
-     * Creates a notification and shows it in the OS drag-down status bar
-     */
     private void showNotification() {
         CharSequence title = "Moments";
         int icon = R.drawable.jar;
-        // This is the scrolling text of the notification
         MomentQuestion question = QuestionManager.getRandomQuestion(getApplicationContext());
         CharSequence text = question.getQuestion();
         long time = System.currentTimeMillis();
@@ -65,8 +61,10 @@ public class NotificationService extends Service {
         Notification notification = new Notification(icon, text, time);
         Intent addTextActivityIntent =  new Intent(this, NTextAddActivity.class);
         addTextActivityIntent.putExtra(TextInputDialog.PROMPT_KEY, question.getPrompt());
-        PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, addTextActivityIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        // The PendingIntent to launch if the user selects the notification
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, addTextActivityIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
         notification.setLatestEventInfo(this, title, text, contentIntent);
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
         mNM.notify(NOTIFICATION, notification);

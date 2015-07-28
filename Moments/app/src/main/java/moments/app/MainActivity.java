@@ -34,7 +34,6 @@ public class MainActivity extends MomentPromptActivity {
                 @Override
                 public void onGlobalLayout() {
                     addText.setMinimumHeight(addText.getMeasuredWidth());
-                    //addText.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             });
         }
