@@ -12,20 +12,15 @@ import moments.app.widget.WImageAddActivity;
 import moments.app.widget.WLinkAddActivity;
 import moments.app.widget.WTextAddActivity;
 
-/**
- * Created by hzhou1235 on 6/27/15.
- */
 public class MomentsAppWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
-        // Perform this loop procedure for each App Widget that belongs to this provider
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            // Create an Intent to launch WidgetActivity
             Intent textIntent = new Intent(context, WTextAddActivity.class);
             textIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             PendingIntent pendingTextIntent = PendingIntent.getActivity(context, 0, textIntent, 0);
@@ -38,14 +33,11 @@ public class MomentsAppWidgetProvider extends AppWidgetProvider {
             linkIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             PendingIntent pendingLinkIntent = PendingIntent.getActivity(context, 0, linkIntent, 0);
 
-            // Get the layout for the App Widget and attach an on-click listener
-            // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget);
             views.setOnClickPendingIntent(R.id.add_text, pendingTextIntent);
             views.setOnClickPendingIntent(R.id.add_image, pendingImageIntent);
             views.setOnClickPendingIntent(R.id.add_link, pendingLinkIntent);
 
-            // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
 
         }

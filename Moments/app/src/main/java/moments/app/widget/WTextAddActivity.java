@@ -6,9 +6,6 @@ import android.os.Bundle;
 import moments.app.TextInputDialog;
 import moments.app.Type;
 
-/**
- * Created by hzhou1235 on 6/27/15.
- */
 public class WTextAddActivity extends MomentPromptWidgetActivity {
 
     @Override
