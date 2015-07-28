@@ -8,7 +8,7 @@ import android.widget.TextView;
 /**
  * Created by hzhou1235 on 7/26/15.
  */
-public class RalewayTextView extends TextView {
+public class `RalewayTextView extends TextView {
 
     public RalewayTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
