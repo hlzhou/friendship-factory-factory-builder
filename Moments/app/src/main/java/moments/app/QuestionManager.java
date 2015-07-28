@@ -56,10 +56,6 @@ public class QuestionManager {
         private String question;
         private String prompt;
 
-        public MomentQuestion(String question) {
-            this(question, null);
-        }
-
         public MomentQuestion(String question, String prompt) {
             this.question = question;
             this.prompt = prompt;
@@ -74,10 +70,6 @@ public class QuestionManager {
                 return question;
             }
             return prompt;
-        }
-
-        public boolean doAppendPrompt() {
-            return prompt != null;
         }
     }
 

@@ -65,11 +65,6 @@ public class HappyNotificationManager extends BroadcastReceiver {
         return (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
     }
 
-    /**
-     *
-     * @param context
-     * @return the PendingIntent used to launch a notification
-     */
     private static PendingIntent getNotificationPendingIntent(Context context) {
         Intent intent = getNotificationIntent(context);
         return PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

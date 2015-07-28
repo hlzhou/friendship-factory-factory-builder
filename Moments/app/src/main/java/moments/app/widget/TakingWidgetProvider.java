@@ -11,6 +11,7 @@ import moments.app.R;
 
 public class TakingWidgetProvider extends AppWidgetProvider {
 
+    @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
@@ -25,10 +26,6 @@ public class TakingWidgetProvider extends AppWidgetProvider {
             views.setOnClickPendingIntent(R.id.take_jar, pendingTakeIntent);
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
-
         }
     }
-
-    public void onReceive() {}
-
 }

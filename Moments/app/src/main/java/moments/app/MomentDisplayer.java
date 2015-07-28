@@ -14,7 +14,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,10 +42,6 @@ public class MomentDisplayer {
 		}
 		return false;
 	}
-
-	private static boolean showTextMoment(Activity activity, String text){
-		return showTextMoment(activity, text, null);
-	}
 	
 	private static boolean showTextMoment(Activity activity, String text, final JarDismissListener jarDismissListener){
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
@@ -70,10 +65,6 @@ public class MomentDisplayer {
         return true;
 	}
 
-	private static boolean showLinkMoment(Activity activity, String text) {
-		return showLinkMoment(activity, text, null);
-	}
-
 	private static boolean showLinkMoment(Activity activity, String text, JarDismissListener jarDismissListener) {
 		if (!text.startsWith("https://") && !text.startsWith("http://")){
 		    text = "http://" + text;
@@ -86,16 +77,9 @@ public class MomentDisplayer {
 		}
 		return true;
 	}
-
-	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-	private static boolean showImageMoment(Activity activity, String img) {
-		return showImageMoment(activity, img, null);
-	}
 	
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	private static boolean showImageMoment(Activity activity, String img, final JarDismissListener jarDismissListener) {
-	    LayoutInflater inflater = activity.getLayoutInflater();
-	    
 	    Uri imageUri = Uri.parse(img);
 	    
 	 	Display display = activity.getWindowManager().getDefaultDisplay();
@@ -141,7 +125,6 @@ public class MomentDisplayer {
 			}
 		});
 
-	    // Show the dialog
 	    dialog.show();
 	    return true;
 	}

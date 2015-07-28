@@ -19,7 +19,7 @@ public class TextInputDialog extends DialogFragment{
 	public static String PROMPT_KEY = "PROMPT_KEY_TEXTINPUTDIALOG";
 	
 	public interface TextSubmitter {
-		public void submitText(String string);
+		void submitText(String string);
 	}
 	
 	private TextSubmitter mTextSubmitter;
@@ -85,7 +85,7 @@ public class TextInputDialog extends DialogFragment{
 
 		dialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
-			public void onShow(DialogInterface dialog) {                    //
+			public void onShow(DialogInterface dialog) {
 				Button positiveButton = ((AlertDialog) dialog)
 						.getButton(AlertDialog.BUTTON_POSITIVE);
 				positiveButton.setTypeface(ralewayFont);
@@ -97,12 +97,6 @@ public class TextInputDialog extends DialogFragment{
 		});
 		return dialog;
     }
-
-	public void setPromptStringIfDialogCalled(String prompt) {
-		if (text != null) {
-			text.setHint(prompt);
-		}
-	}
 	
 	@Override
 	public void onAttach(Activity activity) {
