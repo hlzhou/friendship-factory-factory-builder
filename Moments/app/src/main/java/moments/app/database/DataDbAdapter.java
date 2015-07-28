@@ -10,16 +10,6 @@ import android.util.Log;
 
 import moments.app.Type;
 
-/**
- * Simple notes database access helper class. Defines the basic CRUD operations
- * for the notepad example, and gives the ability to list all notes as well as
- * retrieve or modify a specific note.
- *
- * This has been improved from the first version of this tutorial through the
- * addition of better error handling and also using returning a Cursor instead
- * of using a collection of inner classes (which is less scalable and not
- * recommended).
- */
 public class DataDbAdapter {
 
     public static final String KEY_TYPE = "type";
@@ -30,9 +20,6 @@ public class DataDbAdapter {
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
-    /**
-     * Database creation sql statement
-     */
     private static final String DATABASE_CREATE =
             "create table notes (_id integer primary key autoincrement, "
                     + "type text not null, body text not null);";
@@ -75,7 +62,7 @@ public class DataDbAdapter {
     }
 
     /**
-     * Open the notes database. If it cannot be opened, try to create a new
+     * Open the moments database. If it cannot be opened, try to create a new
      * instance of the database. If it cannot be created, throw an exception to
      * signal the failure
      *
@@ -125,7 +112,6 @@ public class DataDbAdapter {
      * @return Cursor over all notes
      */
     public Cursor fetchAllNotes() {
-
         return mDb.query(DATABASE_TABLE, new String[]{KEY_ROWID, KEY_TYPE,
                 KEY_BODY}, null, null, null, null, null);
     }
@@ -138,9 +124,7 @@ public class DataDbAdapter {
      * @throws SQLException if note could not be found/retrieved
      */
     public Cursor fetchNote(long rowId) throws SQLException {
-
         Cursor mCursor =
-
                 mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
                                 KEY_TYPE, KEY_BODY}, KEY_ROWID + "=" + rowId, null,
                         null, null, null, null);
@@ -148,6 +132,5 @@ public class DataDbAdapter {
             mCursor.moveToFirst();
         }
         return mCursor;
-
     }
 }

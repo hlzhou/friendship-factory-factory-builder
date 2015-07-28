@@ -10,9 +10,6 @@ import android.widget.RemoteViews;
 
 import moments.app.R;
 
-/**
- * Created by hzhou1235 on 6/27/15.
- */
 public class AppWidgetConfigureActivity extends Activity {
 
     int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
@@ -61,5 +58,4 @@ public class AppWidgetConfigureActivity extends Activity {
             finish();
         }
     };
-
 }

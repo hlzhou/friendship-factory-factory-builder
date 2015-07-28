@@ -5,9 +5,6 @@ import android.os.Bundle;
 import moments.app.JarDismissListener;
 import moments.app.MomentDisplayer;
 
-/**
- * Created by hzhou1235 on 6/27/15.
- */
 public class WTakeActivity extends MomentPromptWidgetActivity implements JarDismissListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

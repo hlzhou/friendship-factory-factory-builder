@@ -39,9 +39,7 @@ public class NotificationService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("LocalService", "Received start id " + startId + ": " + intent);
-
         showNotification();
-
         // We don't care if this service is stopped as we have already delivered our notification
         return START_NOT_STICKY;
     }
@@ -58,11 +56,9 @@ public class NotificationService extends Service {
         int icon = R.drawable.jar;
         MomentQuestion question = QuestionManager.getRandomQuestion(getApplicationContext());
         CharSequence text = question.getQuestion();
-
         long time = System.currentTimeMillis();
 
         Notification notification = new Notification(icon, text, time);
-
         Intent addTextActivityIntent =  new Intent(this, NTextAddActivity.class);
         addTextActivityIntent.putExtra(TextInputDialog.PROMPT_KEY, question.getPrompt());
 
@@ -70,11 +66,9 @@ public class NotificationService extends Service {
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, addTextActivityIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         notification.setLatestEventInfo(this, title, text, contentIntent);
-
-        // Clear the notification when it is pressed
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
-
         mNM.notify(NOTIFICATION, notification);
+
         stopSelf();
     }
 }
