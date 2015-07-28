@@ -9,13 +9,21 @@ import java.util.Random;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+/**
+ * Manages the various questions which can be used to prompt the user to give a happy memory
+ * via notification.
+ */
 public class QuestionManager {
 
     private static Map<String, String> questionsPromptMap;
     private static List<String> questions;
 
+    // Signifies that a prompt should be appended to the beginning of a user's response
     private static String APPEND_TO_BEGINNING_FLAG = "... ";
 
+    /**
+     * Simplifies retrieval of Strings from string resources
+     */
     private static class EasyStringGetter {
         private Context context;
 
@@ -80,6 +88,11 @@ public class QuestionManager {
         return prompt.contains(APPEND_TO_BEGINNING_FLAG);
     }
 
+    /**
+     *
+     * @param question
+     * @return whether or not the given question is currently applicable to the user.
+     */
     public static boolean isQuestionAppropriate(String question, Context context) {
         if (question.equals(context.getString(R.string.what_listen))) {
             AudioManager manager = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 /**
- * Created by hzhou1235 on 7/26/15.
+ * Convenience class for EditTexts with font already set
  */
 public class RalewayEditText extends EditText{
     public RalewayEditText(Context context, AttributeSet attrs){

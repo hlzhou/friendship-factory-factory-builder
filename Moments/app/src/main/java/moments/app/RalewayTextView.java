@@ -5,7 +5,9 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-
+/**
+ * Convenience class for TextView with font already set
+ */
 public class RalewayTextView extends TextView {
 
     public RalewayTextView(Context context, AttributeSet attrs) {

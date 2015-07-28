@@ -23,7 +23,9 @@ import java.io.IOException;
 
 import moments.app.database.Data;
 
-
+/**
+ * Handles the displaying of moments retrieved from the jar
+ */
 public class MomentDisplayer {
 
 	public static boolean showMoment(Activity activity, Data data) {
@@ -92,32 +94,27 @@ public class MomentDisplayer {
 	
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	private static boolean showImageMoment(Activity activity, String img, final JarDismissListener jarDismissListener) {
-	    // Get the layout inflater
 	    LayoutInflater inflater = activity.getLayoutInflater();
 	    
 	    Uri imageUri = Uri.parse(img);
 	    
-	    // Get screen size
 	 	Display display = activity.getWindowManager().getDefaultDisplay();
 	 	Point size;
 		size = new Point();
 		display.getSize(size);
 	 	int screenWidth = size.x;
 	 	int screenHeight = size.y;
-	 	
-	 	// Get target image size
+
 	 	Bitmap bitmap;
 		try {
 			bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), imageUri);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			return false;
 		}
 	 	int bitmapHeight = bitmap.getHeight();
 	 	int bitmapWidth = bitmap.getWidth();
 	 	
-	 	// Scale the image down to fit perfectly into the screen
-	 	// The value (250 in this case) must be adjusted for phone/tables displays
+	 	// Scale the image down
 	 	while(bitmapHeight > (screenHeight - 10) || bitmapWidth > (screenWidth - 10)) {
 	 		bitmapHeight = bitmapHeight / 2;
 	 		bitmapWidth = bitmapWidth / 2;
@@ -132,9 +129,7 @@ public class MomentDisplayer {
 	    dialog.setContentView(R.layout.image_moment_dialog);
 	    ImageView image = (ImageView) dialog.findViewById(R.id.image);
 	    image.setBackground(resizedBitmap);
-	    
-	    // Without this line there is a very small border around the image (1px)
-	    // In my opinion it looks much better without it, so the choice is up to you.
+
 	    dialog.getWindow().setBackgroundDrawable(null);
 
 		dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
