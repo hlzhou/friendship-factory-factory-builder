@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="moments.moments" >
+    package="moments.app" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="moments.app.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,39 +20,39 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="AppWidgetConfigureActivity">
+        <activity android:name=".widget.AppWidgetConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="TakeWidgetConfigureActivity">
+        <activity android:name=".widget.TakeWidgetConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".WTextAddActivity"
+            android:name=".widget.WTextAddActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
         <activity
-            android:name=".NTextAddActivity"
+            android:name=".notification.NTextAddActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
-        <activity android:name=".WImageAddActivity"
+        <activity android:name=".widget.WImageAddActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
-        <activity android:name=".WLinkAddActivity"
+        <activity android:name=".widget.WLinkAddActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
-        <activity android:name=".WTakeActivity"
+        <activity android:name=".widget.WTakeActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name="moments.app.SettingsActivity"></activity>
 
         <activity
-       	    android:name=".LightInputActivity"
+       	    android:name="moments.app.LightInputActivity"
        	    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
        	    <intent-filter>
         		<action android:name="android.intent.action.SEND" />
@@ -62,7 +62,7 @@
     		</intent-filter>
        	</activity>
 
-        <receiver android:name=".MomentsAppWidgetProvider" >
+        <receiver android:name=".widget.MomentsAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -70,7 +70,7 @@
                 android:resource="@xml/moments_appwidget_info" />
         </receiver>
 
-        <receiver android:name=".TakingWidgetProvider" >
+        <receiver android:name=".widget.TakingWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -78,13 +78,13 @@
                 android:resource="@xml/moments_takeappwidget_info" />
         </receiver>
 
-        <receiver android:name=".HappyNotificationManager">
+        <receiver android:name=".notification.HappyNotificationManager">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
         </receiver>
 
-        <service android:name=".NotificationService" />
+        <service android:name=".notification.NotificationService" />
 
     </application>
 
