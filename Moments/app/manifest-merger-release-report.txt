@@ -17,110 +17,126 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from AndroidManifest.xml:5:5
 	android:name
 		ADDED from AndroidManifest.xml:5:22
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from AndroidManifest.xml:6:5
+	android:name
+		ADDED from AndroidManifest.xml:6:22
 application
-ADDED from AndroidManifest.xml:7:5
+ADDED from AndroidManifest.xml:8:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
 	android:label
-		ADDED from AndroidManifest.xml:10:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:8:9
-	android:icon
-		ADDED from AndroidManifest.xml:9:9
-	android:theme
 		ADDED from AndroidManifest.xml:11:9
-activity#moments.moments.MainActivity
-ADDED from AndroidManifest.xml:12:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:9:9
+	android:icon
+		ADDED from AndroidManifest.xml:10:9
+	android:theme
+		ADDED from AndroidManifest.xml:12:9
+activity#moments.app.MainActivity
+ADDED from AndroidManifest.xml:13:9
 	android:label
+		ADDED from AndroidManifest.xml:15:13
+	android:name
 		ADDED from AndroidManifest.xml:14:13
-	android:name
-		ADDED from AndroidManifest.xml:13:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:15:13
+ADDED from AndroidManifest.xml:16:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:16:17
+ADDED from AndroidManifest.xml:17:17
 	android:name
-		ADDED from AndroidManifest.xml:16:25
+		ADDED from AndroidManifest.xml:17:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:18:17
+ADDED from AndroidManifest.xml:19:17
 	android:name
-		ADDED from AndroidManifest.xml:18:27
-activity#moments.moments.AppWidgetConfigureActivity
-ADDED from AndroidManifest.xml:22:9
+		ADDED from AndroidManifest.xml:19:27
+activity#moments.app.widget.WTextAddActivity
+ADDED from AndroidManifest.xml:23:9
+	android:theme
+		ADDED from AndroidManifest.xml:25:13
 	android:name
-		ADDED from AndroidManifest.xml:22:19
-intent-filter#android.appwidget.action.APPWIDGET_CONFIGURE
-ADDED from AndroidManifest.xml:23:13
-action#android.appwidget.action.APPWIDGET_CONFIGURE
-ADDED from AndroidManifest.xml:24:17
+		ADDED from AndroidManifest.xml:24:13
+activity#moments.app.notification.NTextAddActivity
+ADDED from AndroidManifest.xml:27:9
+	android:theme
+		ADDED from AndroidManifest.xml:29:13
 	android:name
-		ADDED from AndroidManifest.xml:24:25
-activity#moments.moments.TakeWidgetConfigureActivity
-ADDED from AndroidManifest.xml:28:9
+		ADDED from AndroidManifest.xml:28:13
+activity#moments.app.widget.WImageAddActivity
+ADDED from AndroidManifest.xml:31:9
+	android:theme
+		ADDED from AndroidManifest.xml:32:13
 	android:name
-		ADDED from AndroidManifest.xml:28:19
-activity#moments.moments.WTextAddActivity
+		ADDED from AndroidManifest.xml:31:19
+activity#moments.app.widget.WLinkAddActivity
 ADDED from AndroidManifest.xml:34:9
 	android:theme
-		ADDED from AndroidManifest.xml:36:13
-	android:name
 		ADDED from AndroidManifest.xml:35:13
-activity#moments.moments.WImageAddActivity
-ADDED from AndroidManifest.xml:38:9
+	android:name
+		ADDED from AndroidManifest.xml:34:19
+activity#moments.app.widget.WTakeActivity
+ADDED from AndroidManifest.xml:37:9
 	android:theme
-		ADDED from AndroidManifest.xml:39:13
+		ADDED from AndroidManifest.xml:38:13
 	android:name
-		ADDED from AndroidManifest.xml:38:19
-activity#moments.moments.WLinkAddActivity
-ADDED from AndroidManifest.xml:41:9
+		ADDED from AndroidManifest.xml:37:19
+activity#moments.app.SettingsActivity
+ADDED from AndroidManifest.xml:40:9
+	android:name
+		ADDED from AndroidManifest.xml:40:19
+activity#moments.app.LightInputActivity
+ADDED from AndroidManifest.xml:42:9
 	android:theme
-		ADDED from AndroidManifest.xml:42:13
+		ADDED from AndroidManifest.xml:44:13
 	android:name
-		ADDED from AndroidManifest.xml:41:19
-activity#moments.moments.WTakeActivity
-ADDED from AndroidManifest.xml:44:9
-	android:name
-		ADDED from AndroidManifest.xml:44:19
-activity#moments.moments.LightInputActivity
-ADDED from AndroidManifest.xml:46:9
-	android:theme
-		ADDED from AndroidManifest.xml:48:13
-	android:name
-		ADDED from AndroidManifest.xml:47:13
+		ADDED from AndroidManifest.xml:43:13
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:49:13
+ADDED from AndroidManifest.xml:45:13
 action#android.intent.action.SEND
-ADDED from AndroidManifest.xml:50:11
+ADDED from AndroidManifest.xml:46:11
 	android:name
-		ADDED from AndroidManifest.xml:50:19
+		ADDED from AndroidManifest.xml:46:19
 category#android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:51:11
+ADDED from AndroidManifest.xml:47:11
 	android:name
-		ADDED from AndroidManifest.xml:51:21
+		ADDED from AndroidManifest.xml:47:21
 data
-ADDED from AndroidManifest.xml:52:11
+ADDED from AndroidManifest.xml:48:11
 	android:mimeType
-		ADDED from AndroidManifest.xml:52:17
-receiver#moments.moments.MomentsAppWidgetProvider
-ADDED from AndroidManifest.xml:57:9
+		ADDED from AndroidManifest.xml:48:17
+receiver#moments.app.widget.MomentsAppWidgetProvider
+ADDED from AndroidManifest.xml:53:9
 	android:name
-		ADDED from AndroidManifest.xml:57:19
+		ADDED from AndroidManifest.xml:53:19
 intent-filter#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from AndroidManifest.xml:58:13
+ADDED from AndroidManifest.xml:54:13
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from AndroidManifest.xml:59:17
+ADDED from AndroidManifest.xml:55:17
 	android:name
-		ADDED from AndroidManifest.xml:59:25
+		ADDED from AndroidManifest.xml:55:25
 meta-data#android.appwidget.provider
-ADDED from AndroidManifest.xml:61:13
+ADDED from AndroidManifest.xml:57:13
 	android:resource
-		ADDED from AndroidManifest.xml:62:17
+		ADDED from AndroidManifest.xml:58:17
 	android:name
-		ADDED from AndroidManifest.xml:61:24
-receiver#moments.moments.TakingWidgetProvider
-ADDED from AndroidManifest.xml:65:9
+		ADDED from AndroidManifest.xml:57:24
+receiver#moments.app.widget.TakingWidgetProvider
+ADDED from AndroidManifest.xml:61:9
 	android:name
-		ADDED from AndroidManifest.xml:65:19
+		ADDED from AndroidManifest.xml:61:19
+receiver#moments.app.notification.HappyNotificationManager
+ADDED from AndroidManifest.xml:69:9
+	android:name
+		ADDED from AndroidManifest.xml:69:19
+intent-filter#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:70:13
+action#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:71:17
+	android:name
+		ADDED from AndroidManifest.xml:71:25
+service#moments.app.notification.NotificationService
+ADDED from AndroidManifest.xml:75:9
+	android:name
+		ADDED from AndroidManifest.xml:75:18
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5
