@@ -13,10 +13,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("keystore.jks")
-            storePassword "factoryfactory1235"
-            keyAlias "happy"
-            keyPassword "factory"
+            storeFile file('/Users/hzhou1235/Documents/Summers/fffb.jks')
+            storePassword "password1217"
+            keyAlias "fffb"
+            keyPassword "password1217"
         }
     }
 
@@ -24,6 +24,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     productFlavors {
