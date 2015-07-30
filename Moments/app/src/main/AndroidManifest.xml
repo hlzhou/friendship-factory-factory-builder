@@ -22,7 +22,7 @@
 
         <activity
             android:name=".widget.WTextAddActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity
             android:name=".notification.NTextAddActivity"

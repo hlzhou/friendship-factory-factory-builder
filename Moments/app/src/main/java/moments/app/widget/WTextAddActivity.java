@@ -14,5 +14,4 @@ public class WTextAddActivity extends MomentPromptWidgetActivity {
 
         super.showPrompt(Type.TEXT);
     }
-
 }
