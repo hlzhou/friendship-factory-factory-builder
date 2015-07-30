@@ -10,7 +10,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 /**
- *
+ * Manages when the notifications will appear.
  */
 public class HappyNotificationManager extends BroadcastReceiver {
 

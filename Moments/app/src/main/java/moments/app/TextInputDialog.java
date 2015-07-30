@@ -61,7 +61,6 @@ public class TextInputDialog extends DialogFragment{
 			text.setHint(prompt);
 		}
 	    builder.setView(view)
-	    // Add action buttons
 	           .setPositiveButton(R.string.submit, new DialogInterface.OnClickListener() {
 	               @Override
 	               public void onClick(DialogInterface dialog, int id) {
