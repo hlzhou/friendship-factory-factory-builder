@@ -44,7 +44,7 @@ public class MomentDisplayer {
 	}
 	
 	private static boolean showTextMoment(Activity activity, String text, final JarDismissListener jarDismissListener){
-		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		AlertDialog.Builder builder = new AlertDialog.Builder(activity, AlertDialog.THEME_HOLO_LIGHT);
 		builder.setMessage(text);
     	AlertDialog dialog = builder.create();
 		dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
