@@ -22,7 +22,7 @@
 
         <activity
             android:name=".widget.WTextAddActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Dialog"></activity>
 
         <activity
             android:name=".notification.NTextAddActivity"

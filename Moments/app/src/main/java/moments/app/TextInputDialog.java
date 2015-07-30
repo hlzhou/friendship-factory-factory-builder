@@ -41,7 +41,7 @@ public class TextInputDialog extends DialogFragment{
 	@Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 		Log.d(TAG, "Creating dialog");
-		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), AlertDialog.THEME_HOLO_LIGHT);
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 	    // Get the layout inflater
 	    LayoutInflater inflater = getActivity().getLayoutInflater();
 
