@@ -106,6 +106,10 @@ public class DataDbAdapter {
         return mDb.insert(DATABASE_TABLE, null, initialValues);
     }
 
+    public int deleteImageNote(String path) {
+        return mDb.delete(DATABASE_TABLE, "body=\'" + path + "\'", null);
+    }
+
     /**
      * Return a Cursor over the list of all notes in the database
      *

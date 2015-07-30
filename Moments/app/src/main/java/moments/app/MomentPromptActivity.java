@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 import moments.app.database.Data;
 import moments.app.database.DataDbAdapter;
@@ -31,7 +35,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	    	tDialog.show(getFragmentManager(), "textInput");
 	    	break;
 		case IMAGE:
-			//openImageSourcePickerDialog();
             openGetImageFromGallery();
 	    	break;
 		case LINK:
@@ -109,6 +112,8 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         mDbHelper.createNote(type, text);
     }
 
+    public void deleteImage(String path) { mDbHelper.deleteImageNote(path); }
+
 	public Data getNote() {
 		// Column Indexes:
 		// body = 2
@@ -130,16 +135,21 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
             type = Type.TEXT;
         } else if (typeAsString.equals("image")) {
             type = Type.IMAGE;
+            try {
+                MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(allNotes.getString(2)));
+            } catch (IOException e) {
+                deleteImage(Uri.parse(allNotes.getString(2)).toString());
+                return getNote();
+            }
         } else {
             type = Type.LINK;
         }
         String text = allNotes.getString(2);
 
+
         return new Data(type, text);
 	}
 
     @Override
-    public void onDismiss(DialogInterface dialogInterface) {
-
-    }
+    public void onDismiss(DialogInterface dialogInterface) {}
 }
