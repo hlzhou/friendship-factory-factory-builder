@@ -1,13 +1,11 @@
 package moments.app;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,7 +14,6 @@ import moments.app.database.DataDbAdapter;
 
 public class MomentPromptActivity extends Activity implements TextInputDialog.TextSubmitter, LinkInputDialog.LinkSubmitter, DialogInterface.OnDismissListener{
     private static final String TAG = "MomentPromptActivity";
-	public int mDataNumber = 1;
     public DataDbAdapter mDbHelper;
 
     public static final int RESULT_LOAD_IMAGE = 1;
@@ -43,33 +40,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	    	break;
 		}
 	}
-
-    private void openImageSourcePickerDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.image_source_prompt)
-                .setItems(R.array.image_sources, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // The 'which' argument contains the index position
-                        // of the selected item
-                        switch(which){
-                            case 0:
-                                openTakePicture();
-                                break;
-                            case 1:
-                                openGetImageFromGallery();
-                                break;
-                        }
-                    }
-                });
-        AlertDialog dialog = builder.create();
-        dialog.setOnDismissListener(this);
-        dialog.show();
-    }
-
-    private void openTakePicture() {
-        Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(takePicture, RESULT_TAKE_IMAGE);
-    }
 
     private void openGetImageFromGallery() {
         Intent getImageFromGallery = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -116,7 +86,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         	break;
         case RESULT_TAKE_IMAGE:
         	if(resultCode == RESULT_OK && data != null) {
-        		Uri selectedImage = data.getData();
                 showMomentCapturedToast();
                 onImageSubmit();
         	}else {
@@ -134,12 +103,7 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
     	onSubmit();
     }
 
-    /**
-     * Called when a moment is submitted
-     */
-    protected void onSubmit() {
-
-    }
+    protected void onSubmit() {}
     
     public void createNote(Type type, String text) {
         mDbHelper.createNote(type, text);
@@ -174,9 +138,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
         return new Data(type, text);
 	}
 
-    /**
-     * Called when the input dialog is dismissed without entering any moment
-     */
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
 

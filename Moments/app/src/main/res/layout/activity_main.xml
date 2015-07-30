@@ -37,7 +37,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/add_image"
-                android:src="@drawable/ic_camera_alt_black_48dp"
+                android:src="@drawable/ic_insert_photo_black_48dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/roundedrectangle"
                 android:layout_weight="1"
