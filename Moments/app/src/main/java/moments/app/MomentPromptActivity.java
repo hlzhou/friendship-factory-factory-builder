@@ -31,7 +31,6 @@ public class MomentPromptActivity extends Activity implements TextInputDialog.Te
 	    	tDialog.show(getFragmentManager(), "textInput");
 	    	break;
 		case IMAGE:
-			//openImageSourcePickerDialog();
             openGetImageFromGallery();
 	    	break;
 		case LINK:
