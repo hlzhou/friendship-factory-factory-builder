@@ -22,20 +22,20 @@
 
         <activity
             android:name=".widget.WTextAddActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity
             android:name=".notification.NTextAddActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity android:name=".widget.WImageAddActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity android:name=".widget.WLinkAddActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity android:name=".widget.WTakeActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity android:name="moments.app.SettingsActivity"></activity>
 
