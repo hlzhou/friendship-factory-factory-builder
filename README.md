@@ -1,7 +1,7 @@
 Friendship Factory Factory Builder presents 
 
 # Moments
-## _Return to those happy moments in your life._
+## _Return to those happy moments in your life_
 
 Save laughs and memories without cluttering your bookmarks or folders. Return to them any time you're feeling glum!
 
