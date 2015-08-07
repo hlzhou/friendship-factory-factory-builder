@@ -35,7 +35,7 @@
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
 
         <activity android:name=".widget.WTakeActivity"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"></activity>
 
         <activity android:name="moments.app.SettingsActivity"></activity>
 
